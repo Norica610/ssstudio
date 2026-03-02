@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About — Studio.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#359EFF",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                        ink: "#1a1a1a"
+                    },
+                    fontFamily: {
+                        display: "Space Grotesk",
+                        serif: ["Lora", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* 交互微调：控制描述文字的展开高度 */
+        .skill-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+            opacity: 0;
+        }
+        .group:hover .skill-content {
+            max-height: 200px; /* 足够容纳解释文字的高度 */
+            opacity: 1;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-background-light font-display transition-colors duration-300">
+
+<header class="sticky top-0 z-50 w-full border-b border-ink/10 dark:border-background-light/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="text-2xl font-black tracking-tighter uppercase">Studio.</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
+            <a class="hover:text-primary transition-colors" href="index.html">Work</a>
+            <a class="text-primary tracking-[0.2em]" href="about.html">About</a>
+            <a class="hover:text-primary transition-colors" href="resume.html">resume</a>
+        </nav>
+        <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-none font-bold text-xs uppercase tracking-[0.2em] transition-all">
+            Contact
+        </button>
+    </div>
+</header>
+
+<main class="max-w-[1440px] mx-auto">
+    <section class="px-6 md:px-12 pt-24 pb-20 border-b border-ink/10 dark:border-background-light/10">
+        <p class="text-xs uppercase tracking-[0.4em] font-bold text-primary mb-8">Personal Profile</p>
+        <h1 class="text-5xl md:text-8xl font-bold leading-none tracking-tighter uppercase max-w-4xl">
+           <span class="italic font-light">Hi world <br> I'am shuang. </span> 
+        </h1>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2">
+<div class="border-b md:border-r editorial-border p-8 md:p-16 flex flex-col justify-between group">
+<div>
+<span class="text-xs font-bold tracking-[0.3em] uppercase opacity-50 mb-4 block">01 — Creative</span>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase">Graphic &amp; <span class="text-primary">3D Design</span></h2>
+<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
+                        Crafting visual identities that resonate. From minimalist typography to complex 3D environments, I build brands that live across physical and digital dimensions.
+                    </p>
+</div>
+<div class="mt-12 overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
+<img alt="Abstract 3D render with textures" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhgbZzHMSGuQ1kzqwwX6LosejZghdR5uhE8htFAfoJuCs2URyNv9fHowsxzhTq-nFsFVTq1yA_8-2AuID2OEqvpBXVAEVjsa_utYBiiyCTuT9lOQJHS9yGQ77iCwmHw9RulrdoRYYlq6u1OXrfhLi62iEORoqJe9x7A9tywLbs6J2oB1A6CbrkBwSMZ04klYZ9RWqZ6N-p28GzzwIvdBtRE53BzNW3BhwYg3npuDzyah-f3nOWy6Gu-KQ-3UBw9tcoQlXF_QvGhoY"/>
+</div>
+</div>
+<div class="border-b editorial-border p-8 md:p-16 flex flex-col justify-between">
+<div>
+<span class="text-xs font-bold tracking-[0.3em] uppercase opacity-50 mb-4 block">02 — Development</span>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase">Vibe Coding</h2>
+<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
+                        The intersection of engineering and intuition. Building performant, accessible web experiences that don't just work—they feel right. Specializing in Tailwind, React, and GSAP.
+                    </p>
+</div>
+<div class="mt-12 overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
+<img alt="Clean coding workspace with monitors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpOm2xORFMKWuFPjcsVTovhhVmEz8nARKVqxTeK4ooTPzQURaQmRtUE5TyfwJDoiekB-6YGIHoX6N0rsu0fs8u9Jo1_VqT0fxq6YLhMeAReaOMEsIm8yFha7mEm4DyK3yDNqgpdCwsiUpOxpmjAY5eRkef55oecleesBhlgHARyi7G2FxWzsQyHLnZWjrcFSwYGdB5HQNPosWHhTdgAN0i7m0XnXV1dI36DDpF2JSnRj-zr8NnujT5z4TXwP4gVZbMMjzgZSZsta8"/>
+</div>
+</div>
+<div class="border-b md:border-r editorial-border p-8 md:p-16 flex flex-col justify-between">
+<div>
+<span class="text-xs font-bold tracking-[0.3em] uppercase opacity-50 mb-4 block">03 — Strategy</span>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase">User Research</h2>
+<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
+                        Grounding design in reality. Through rigorous testing and ethnographic research, I uncover the "why" behind user behavior to create more <span class="text-primary italic font-serif">intentional</span> products.
+                    </p>
+</div>
+<div class="mt-12 overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
+<img alt="User research session with sticky notes" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAads8OB4ixNWpGWSwFVZ_ayDWoVzs1aPKN1Kzt03XJfQ-bl6Cx8081nacQRI45eVWX9Y7LByVKk6yEl9gaY6kHheO4D0PgWWHOW-cBDOtnVIjJP2RRJd4w7jEMfQGkynlT-7j3ImSnM1jfxf6VIYt_hzInu8vkYy7w33_tfvkOlK2iKh67gFAeet7wrQXOqNRpn2lMDnlrnhYM13egeA7CmS4e1UUXpw9ejFhVRQt-NKxA2Dm1rHLYR6GU_2XIp1_WeKfq2v1SG40"/>
+</div>
+</div>
+<div class="border-b editorial-border p-8 md:p-16 flex flex-col justify-between">
+<div>
+<span class="text-xs font-bold tracking-[0.3em] uppercase opacity-50 mb-4 block">04 — Sensory</span>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase">Motion &amp; Music</h2>
+<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
+                        Bringing projects to life through rhythmic motion and spatial audio. Sound and movement are the hidden layers that define the premium character of a digital experience.
+                    </p>
+</div>
+<div class="mt-12 overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
+<img alt="Dynamic abstract motion design still" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJCiumdr-kQmxpBatQ5XB8qsIjZps7K-6bFQsFdIij5Zik7KGgAJH7-wAzrSFEV9K5b7rHJDbBxwKeUpSrgchj-_PbRxtv2ahXYwnHXB2vi-K-ibD0BFXe9bSL0xmzdqrkC4GXyrrbODEUfdNSzsd72cskCzE6CmjkNYyRWS7Os1tAa_NqNYMoe5XJB_eJAk9tAlIGJE8zOOv9j9QnAdd4sn7PaMaPfAAU9KimQLZ3ifYmThs7-9VMICBlBBQmjmMa7MqoWU9Xk38"/>
+</div>
+</div>
+</section>
+<section class="border-b editorial-border grid grid-cols-1 md:grid-cols-12 items-center">
+<div class="md:col-span-6 p-8 md:p-16">
+<span class="text-xs font-bold tracking-[0.3em] uppercase opacity-50 mb-4 block">05 — Scalability</span>
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-8 uppercase">System Design</h2>
+<p class="text-xl leading-relaxed text-slate-600 dark:text-slate-400 max-w-xl">
+                    Creating sustainable frameworks that empower teams. I design comprehensive design systems and documentation that ensure consistency across large-scale platforms.
+                </p>
+<div class="mt-8 flex gap-4 flex-wrap">
+<span class="px-4 py-2 border editorial-border text-xs font-bold uppercase tracking-widest">Scalability</span>
+<span class="px-4 py-2 border editorial-border text-xs font-bold uppercase tracking-widest">Tokens</span>
+<span class="px-4 py-2 border editorial-border text-xs font-bold uppercase tracking-widest">Components</span>
+</div>
+</div>
+<div class="md:col-span-6 h-full min-h-[400px] border-l editorial-border overflow-hidden">
+<img alt="Geometric architectural design detail" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8nwiIVJBK1GuDPzQD4gOXHHq1Z5WnZModakFZ2gMNqlg-Pkqg6s5bT-dZzXmqUmaMAeLaH15SLHGP2c-Kj6cuCUL0qKB66w4bd38A1krUy2DNUUVMWus325WaUVzrymZVfaqkBNlgi3Vpa-nlfuLE0dd1dqio0GzKyxq9gvWpQilguVQp4YSTpdc84oHEnsyu8kH5J2yO_pwqJMdRStPlpLDyHgW9f9n1cR4624DvLpZk27r2y7EBLiZus3L1XkPSpBrSYjPWe0"/>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+<div class="p-8 md:p-16 flex flex-col justify-between border-b md:border-b-0 md:border-r editorial-border">
+<div>
+<h2 class="text-6xl md:text-8xl font-black tracking-tighter leading-tight mb-8">
+                        LET’S BUILD<br/>SOMETHING<br/>
+<span class="text-primary italic font-serif">MEANINGFUL.</span>
+</h2>
+<p class="text-xl leading-relaxed max-w-sm">
+                        Currently accepting new commissions for 2024. Available for worldwide collaborations.
+                    </p>
+</div>
+<div class="mt-12">
+<a class="group inline-flex items-center gap-4 text-xl font-bold border-b-2 border-primary pb-2" href="mailto:hello@studio.design">
+                        Get in touch
+                        <svg class="h-6 w-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+<div class="p-8 md:p-16 flex flex-col">
+<span class="text-xs font-bold tracking-[0.3em] uppercase opacity-50 mb-12 block">Selected Clients / Collaborators</span>
+<div class="space-y-12">
+<div class="border-b editorial-border pb-8">
+<span class="text-xs font-bold text-slate-400 block mb-2 uppercase">2023 — Present</span>
+<h3 class="text-xl md:text-2xl font-bold hover:text-primary cursor-default transition-colors">Volunteer of Scottish Tech Army</h3>
+</div>
+<div class="border-b editorial-border pb-8">
+<span class="text-xs font-bold text-slate-400 block mb-2 uppercase">2022 — 2023</span>
+<h3 class="text-xl md:text-2xl font-bold hover:text-primary cursor-default transition-colors">Architecture &amp; Urban Design Collective</h3>
+</div>
+<div class="border-b editorial-border pb-8">
+<span class="text-xs font-bold text-slate-400 block mb-2 uppercase">2021 — 2022</span>
+<h3 class="text-xl md:text-2xl font-bold hover:text-primary cursor-default transition-colors">Global Sustainability Initiative</h3>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="px-8 py-12 border-t editorial-border flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-xs font-bold tracking-[0.3em] uppercase opacity-50">
+            © 2024 Design Studio. All Rights Reserved.
+        </div>
+<div class="flex gap-8 text-xs font-bold tracking-[0.3em] uppercase">
+<a class="hover:text-primary" href="#">Instagram</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+<a class="hover:text-primary" href="#">Dribbble</a>
+</div>
+<div class="text-xs font-bold tracking-[0.3em] uppercase opacity-50">
+            Based in Tokyo / NY
+        </div>
+</footer>
+
+</body></html>

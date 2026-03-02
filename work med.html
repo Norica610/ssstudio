@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Home: Editorial Grid</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#359EFF", "background-light": "#f5f7f8", "background-dark": "#0f1923", ink: "#1a1a1a"}, fontFamily: {display: "Space Grotesk", serif: ["Lora", "serif"]}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        .grid-line {
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+        .vertical-line {
+            border-left: 1px solid rgba(26, 26, 26, 0.1);
+        }
+        .dark .grid-line {
+            border-bottom: 1px solid rgba(248, 247, 245, 0.1);
+        }
+        .dark .vertical-line {
+            border-left: 1px solid rgba(248, 247, 245, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-background-light font-display transition-colors duration-300">
+<!-- Sticky Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-ink/10 dark:border-background-light/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+        <a class="hover:text-primary transition-colors" href="index.html">
+            <span class="text-2xl font-black tracking-tighter uppercase">Studio.</span>
+        </a>
+
+    </div>
+        <nav class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
+            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="hover:text-primary transition-colors scroll-smooth scroll-mt-10" href="#work-section">work</a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- the process -->
+<main class="max-w-[1440px] mx-auto">
+    <section id="overall"
+        class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-24">
+        <div class="md:col-span-3 lg:col-span-2">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                01 — Overall Strategy
+            </h2>
+        </div>
+        <div class="md:col-span-8 lg:col-span-9">
+            <h1 class="text-5xl md:text-5xl font-bold tracking-tighter uppercase leading-[0.85] mb-8">
+                Clinical Recruitment <br/> Ecosystem
+            </h1>
+            <p class="text-xl md:text-2xl font-serif italic text-ink/70 dark:text-background-light/70 max-w-2xl leading-relaxed">
+                Reimagining clinical trial recruitment not as a transactional search, but as a "Connected Community" that prioritizes the patient's "Right to Know" and psychological safety.
+            </p>
+        </div>
+    </section>
+        <section id="services"
+            class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+            <div class="md:col-span-3 lg:col-span-2">
+                <h2
+                    class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                    02 — What did I do?
+                </h2>
+            </div>
+            <div class="md:col-span-8 lg:col-span-9">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold tracking-tight mb-4">Role</h3>
+                        <p class="text-lg opacity-80 leading-relaxed"></p>UX Research + Strategy, Interaction
+                        Design,Wireframing, Low-fi and Hi-fi Mockups, <br>Graphic Design.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold tracking-tight mb-4">Who'd I work with?</h3>
+                        <p class="text-lg opacity-80 leading-relaxed">In collaboration with the doctor in clinic, Product Team and
+                            12+ local retail stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights"
+            class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+            <div class="md:col-span-3 lg:col-span-2">
+                <h2
+                    class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                    03 — The Challenge
+                </h2>
+            </div>
+            <div class="md:col-span-8 lg:col-span-9 space-y-12">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4 italic">The problem with promoting new medical use devices...</h3>
+                    <p class="text-lg opacity-70 max-w-xl">
+                        <br>For the company, a certain number of patients is needed.<br>
+                        
+                        <br>For physicians, within a limited time, it is difficult for them to introduce clearly, which leads to mistrust.<br>
+
+                        <br>For patients: this disease is not a life-threatening one; they are not in a hurry to make decisions, but medical companies already meet the
+
+                        deadline to scale it up to clinical use.<br>
+
+                        <br>For all-in-one clinical recruitment websites: mainly designed for serious diseases, used as a search tool for patients when they had no
+
+                        other choices but to grab at straws.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4 italic text-primary">The ideation</h3>
+                    <p class="text-lg opacity-70 max-w-xl">How might we alleviate the worry and inform them of the risks
+                        of the new treatment for our target patients?</p>
+                </div>
+            </div>
+        </section>
+        
+    <section id="insights"
+        class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+        <div class="md:col-span-3 lg:col-span-2">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                03 — Research & Insights
+            </h2>
+        </div>
+        <div class="md:col-span-8 lg:col-span-9 space-y-24">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class=" p-4 bg-white ">
+                    <img src="photo/chart no.png" alt="Bar chart showing willingness to participate by channel" class="w-full h-auto">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h3 class="text-3xl font-bold tracking-tighter mb-6 italic">The Trust Threshold</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">
+                        Quantitative data revealed that <strong>68.9%</strong> of patients are most likely to trust information received in-person at a specialist's office. Conversely, digital website advertisements scored nearly <strong>30% lower</strong> in trust.
+                    </p>
+                    <p class="mt-6 text-sm font-black uppercase tracking-widest text-primary border-l-4 border-primary pl-4">
+                        Strategy: The Digital Portal must mimic the specialist's authority to bridge this trust gap.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tighter mb-6 italic">Mapping Psychological Friction</h3>
+                    <p class="text-lg opacity-80 leading-relaxed mb-6">
+                        Observations across the patient journey identified critical "Pain Points":
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <span class="text-primary font-bold">01.</span>
+                            <p class="text-sm font-bold uppercase tracking-wide"><strong>Before:</strong> High anxiety regarding professional medical knowledge.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-primary font-bold">02.</span>
+                            <p class="text-sm font-bold uppercase tracking-wide"><strong>During:</strong> Distrust stemming from complicated document signing.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-primary font-bold">03.</span>
+                            <p class="text-sm font-bold uppercase tracking-wide"><strong>After:</strong> A total lack of systematic follow-up guidance.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-white ">
+                    <img src="photo/circle.png" alt="Diagram of research observations across Before, During, and After stages" class="w-full h-auto">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="rationale"
+        class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20 bg-zinc-50/50">
+        <div class="md:col-span-3 lg:col-span-2">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                04 — Design Rationale
+            </h2>
+        </div>
+        <div class="md:col-span-8 lg:col-span-9">
+            <div class="max-w-3xl space-y-12">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4 italic">De-layering Medical Complexity</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">
+                    "I optimized the patient-facing enrollment workflow not by making it shorter, but by making it smarter. By introducing 'Qualified Friction' during eligibility checks, I reduced user anxiety through clear risk communication and improved the clinical approval cycle by delivering higher-quality candidate data."                    </p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tighter mb-4 italic text-primary">Qualified Friction in Onboarding</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">
+                        While traditional UX aims for zero friction, clinical recruitment requires <strong>"Qualified Friction"</strong>. I designed the eligibility flow ("Is This Trial Right for You?") to act as a supportive filter. This ensures candidates feel informed about risks while providing high-quality data to the Medical Device Company.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="system"
+        class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+        <div class="md:col-span-3 lg:col-span-2">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                05 — System Architecture
+            </h2>
+        </div>
+        <div class="md:col-span-8 lg:col-span-9">
+            <h3 class="text-3xl font-bold tracking-tighter mb-8 italic">Aligning Multidisciplinary Stakeholders</h3>
+            <p class="text-lg opacity-70 mb-12 max-w-2xl">
+                My Stakeholder Map and Service Blueprint revealed that success depends on more than just a website. It requires a synchronized "Line of Visibility"between:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 border-4 border-ink bg-white">
+                    <h4 class="font-black uppercase text-sm mb-4">The Frontstage (Patient/Doctor)</h4>
+                    <p class="text-sm leading-relaxed italic">
+                        "A Patient-Centric Portal that bridges the gap between complex medical knowledge and clinical decision-making. By integrating eligibility screening and phased surgical navigation, the interface transforms medical data into an empathetic journey to reduce pre-procedural anxiety."                </div>
+                <div class="p-6 border-4 border-ink bg-zinc-50">
+                    <h4 class="font-black uppercase text-sm mb-4">The Backstage (Company/FDA)</h4>
+                    <p class="text-sm leading-relaxed italic">
+                        "The backend synchronizes data between hospitals, data centers, and regulators. It automates candidate filtering and manages real-time feedback loops, allowing the medical company to optimize product iterations based on post-operative statistics and clinical support training."                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lifecycle"
+        class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+        <div class="md:col-span-3 lg:col-span-2">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                06 — End-to-End Care
+            </h2>
+        </div>
+            <div class="md:col-span-8 lg:col-span-9">
+                <h3 class="text-3xl font-bold tracking-tighter mb-8 italic">Addressing the "After Surgery Concern"</h3>
+            
+    
+    <div class="flex flex-col gap-12">
+        <div class="max-w-4xl">
+            <p class="text-lg opacity-70 mb-12 max-w-2xl">
+                Most recruitment tools end at signup. I extended the UX to include Post-Procedure Follow-Up and Coordinator Led Care. By addressing long-term effects and potential side effects in the UI, we build a <span class="italic">"Connected Community"</span> that encourages participants to share and give feedback.
+            </p>
+        </div>
+
+        <div class="w-full bg-[#F9F9F9] rounded-3xl overflow-hidden border border-white group p-4 bg-white">
+            <img 
+                src="photo/process map.png" 
+                alt="Diagram of research observations across Before, During, and After stages" 
+                class="w-full h-auto object-cover transition-transform">
+
+                <div class="flex items-center gap-3 px-2">
+                <span class="h-[1px] w-8 bg-current opacity-30"></span> <p class="text-[10px] md:text-xs opacity-40 uppercase tracking-[0.2em] font-semibold">
+                Stakeholder Map
+                </p>
+        </div>
+    </section>
+
+    <section id="lifecycle"
+    class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+        <div class="md:col-span-3 lg:col-span-2">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+                07 — demo
+            </h2>
+        </div>
+        <div class="md:col-span-8 lg:col-span-9">
+            <div class="iframe-container">
+                <iframe 
+                    src="https://urban-secrets-unfold.lovable.app" 
+                    width="100%" 
+                    height="800px" 
+                    style="border:1px solid #ddd; border-radius: 8px;"
+                    title="Lovable Design Project">
+                </iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 内页Footer -->
+ 
+<footer class="p-6 md:px-12 py-16 flex flex-col md:flex-row justify-between items-start md:items-end">
+    <div>
+    <p class="text-6xl font-black tracking-tighter uppercase">S-Studio.</p>
+    <p class="font-serif italic opacity-60 max-w-xs">Made with passion and love.</p>
+    </div>
+
+    <footer class="px-8 md:px-16 py-16 flex flex-col md:flex-row justify-between items-end border-t border-charcoal/5 dark:border-white/5">
+        <div class="flex flex-col gap-4 mb-12 md:mb-0">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] opacity-40">Connect</p>
+            <div class="flex flex-col gap-2">
+            <a class="text-2xl font-medium hover:text-primary transition-colors underline underline-offset-8 decoration-1 decoration-charcoal/20" href="#">Instagram</a>
+            <a class="text-2xl font-medium hover:text-primary transition-colors underline underline-offset-8 decoration-1 decoration-charcoal/20" href="https://www.linkedin.com/in/shuang-zhao-7a785a247/">LinkedIn</a>
+            <a class="text-2xl font-medium hover:text-primary transition-colors underline underline-offset-8 decoration-1 decoration-charcoal/20" href="#">Behance</a>
+            </div>
+        </div>
+        <div class="flex flex-col items-end text-right">
+            <div class="flex gap-4 mb-6">
+            <div class="size-10 rounded-full border border-charcoal/10 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-sm">arrow_upward</span>
+        </div>
+        </div>
+        <p class="text-sm font-medium">© 2026 S-Studio — Global</p>
+        <p class="text-xs opacity-40 uppercase tracking-widest mt-1">All rights reserved</p>
+        </div>
+</footer>
+</html>
+
+

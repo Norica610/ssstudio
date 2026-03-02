@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Home: Editorial Grid</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#359EFF", "background-light": "#f5f7f8", "background-dark": "#0f1923", ink: "#1a1a1a"}, fontFamily: {display: "Space Grotesk", serif: ["Lora", "serif"]}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        .grid-line {
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+        .vertical-line {
+            border-left: 1px solid rgba(26, 26, 26, 0.1);
+        }
+        .dark .grid-line {
+            border-bottom: 1px solid rgba(248, 247, 245, 0.1);
+        }
+        .dark .vertical-line {
+            border-left: 1px solid rgba(248, 247, 245, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-background-light font-display transition-colors duration-300">
+<!-- Sticky Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-ink/10 dark:border-background-light/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-black tracking-tighter uppercase">Studio.</span>
+</div>
+<nav class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
+<a class="hover:text-primary transition-colors" href="about.html">About</a>
+<a class="hover:text-primary transition-colors scroll-smooth scroll-mt-10" href="#work-section">work</a>
+</nav>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto overflow-x-hidden">
+
+<div class="fixed right-10 bottom-10 z-0">
+    <img id="rotating-flower" src="photo.0.png" class="w-48 md:w-80 h-auto" style="will-change: transform;" alt="Flower">
+</div>
+<script>
+    window.addEventListener('scroll', () => {
+        const flower = document.getElementById('rotating-flower');
+        // window.scrollY 是滚动的距离，乘以 0.2 是为了让旋转速度看起来更自然
+        const rotation = window.scrollY * 0.2; 
+        flower.style.transform = `rotate(${rotation}deg)`;
+    });
+</script>
+
+<!-- Hero Section -->
+<section class="md:px-12 pt-20 pb-32 border-b border-ink/10 dark:border-background-light/10">
+  <div class="max-w-[1000px]">
+
+    <!-- Line 1 -->
+    <h1 class="text-6xl md:text-6xl font-[900] tracking-tighter uppercase leading-[0.9] mb-6 ">
+      Working on
+    </h1>
+
+    <!-- Line 2 (rotating text) -->
+    <h2
+      id="rotating-text"
+      class="text-6xl md:text-6xl font-[900] tracking-tighter uppercase leading-[0.9]
+             italic font-light transition-opacity duration-500 ease-in-out
+             inline-block min-w-[320px] mb-6">
+      complex systems
+    </h2>
+
+    <!-- Line 3 -->
+    <h3 class="text-6xl md:text-6xl font-[900] tracking-tighter uppercase leading-[0.9]">
+      with clarity <br> and care
+    </h3>
+        <script>
+        const words = [
+            "complex systems",
+            "clinical workflows",
+            "community platforms",
+            "scalable frameworks"
+        ];
+
+        let index = 0;
+        const textEl = document.getElementById("rotating-text");
+
+        setInterval(() => {
+            // 1. 先淡出
+            textEl.classList.add("opacity-0");
+
+            // 2. 等动画结束后换词，再淡入
+            setTimeout(() => {
+            index = (index + 1) % words.length;
+            textEl.textContent = words[index];
+            textEl.classList.remove("opacity-0");
+            }, 500); // 必须和 Tailwind 的 duration-500 对齐
+
+        }, 2500); // 每 2.5 秒轮播一次
+        </script>
+  </div>
+</section>
+<div class="md:px-12 md:col-span-4 border-b md:border-b-0 md:border-r border-ink/10 dark:border-background-light/10 p-6 md:p-12">
+    <p class="font-italic text-xl md:text-xl leading-loose tracking-wide text-ink/70 dark:text-background-light/70">
+        
+        <span class="block mb-2">🎨 Hey, I'm Shuang Zhao</span>
+        
+        <span class="block mb-2">🧑‍💻 Currently, optimizing CRM flows and digital touchpoints at Scottish Tech Army</span>
+        
+        <span class="block mb-2">🗞 Previously, architecting physical spaces and community experiences at Aoya</span>
+        
+        <span class="block">🍳 Also, motion design geek, home chef, e-commerce enthusiast, world traveler, and all-around curious person</span>
+
+    </p>
+</div>
+
+
+<!-- Editorial Grid Section -->
+<section id="work-section" class="grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10">
+
+    <!-- Project 1: Large Feature -->
+    <div class="md:col-span-8 p-6 md:p-12 vertical-line grid-line border-l-0">
+    <div class="group cursor-pointer">
+    <div class="overflow-hidden bg-gray-200 aspect-[16/10] mb-6">
+        <a href="work med.html">
+            <img alt="Brutalist UI Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist monochromatic product interface mockup" 
+            src="photo/M11.jpg"/>
+        </a>
+        </div>
+    <div class="flex justify-between items-baseline">
+    <h3 class="text-3xl font-bold uppercase tracking-tighter">Medical service</h3>
+    <span class="font-serif italic text-lg opacity-60">01 — Product Design</span>
+    </div>
+    </div>
+    </div>
+    <!-- Project 2: Side Feature -->
+    <div class="md:col-span-4 p-6 md:p-12 vertical-line grid-line">
+        <div class="group cursor-pointer flex flex-col h-full justify-between">
+        <div>
+        <div class="overflow-hidden bg-gray-200 aspect-[4/5] mb-6">
+            <a href="toolkit.html">
+            <img alt="Modular Identity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract geometric shapes in 3D render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGf55NuvSoEXakaSFjK664EZAxq0CSHq7hmDlR7jCr-xMEc8H3-yKNkH7l7Bn62vtBhGnNATNuy2jMI11G1bJJuLLvGuoa4dmhv_-PAxLTybxqB4BKedU5AGXPWGTk0jRqFjvSfUUC8qL0-z8NCqgElHtoJxt_dWJ8Geun9dIzIR28pmMK3cHALCREMchd6OM-FjSQlpTEK2Tp-VP5O4yAad4TbrGIpl5oyT1NejcsPeDPO-Bo4djzH7MuKx-LJdFUXFZLoJGNbTM"/>
+            </a>
+        </div>
+            <h3 class="text-2xl font-bold uppercase tracking-tighter">Community build</h3>
+            <p class="font-serif italic text-lg opacity-60">02 — workshop toolkit</p>
+        </div>
+        <p class="mt-8 text-sm uppercase tracking-widest font-bold text-primary group-hover:translate-x-2 transition-transform">View Case Study</p>
+        </div>
+    </div>
+    <!-- Project 3: Medium Feature -->
+    <div class="md:col-span-4 p-6 md:p-12 vertical-line grid-line border-l-0">
+        <div class="group cursor-pointer">
+            <div class="overflow-hidden bg-gray-200 aspect-square mb-6">
+                <a href="woman.html">
+                    <img alt="Concrete Editorial" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Minimalist typography on a concrete background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRw5mnYepr-bQ83F2UcMsyvhSjuXi1gZhtY7Eqt4FvfQsuUE7nLTVnINwwhqJ4id1ocZPd_OK8yV2wzrZnoLQjPbQDRTL0327R8gvV6DpAQLKm04qdIbe7XPmnet5AimfjlFT3bpJwdMOYeaqfVGwa_Vz1c48pAUFYRnVVZ4sZyJa-yReRV0ZB22QvdnNXI109vk_r89Rtsr26kc5DEQTY5qz5oZYmUlc7HOAPwuYIHUWOxf9JfcwRUZ8Edr7dHiv4CbT787V3q0I"/>
+                </a>
+                </div>
+            <h3 class="text-2xl font-bold uppercase tracking-tighter">Networking service</h3>
+            <p class="font-serif italic text-lg opacity-60">03 — workshop toolkit</p>
+        </div>
+    </div>
+    <!-- Project 4: Wide Feature -->
+    <div class="md:col-span-8 p-6 md:p-12 vertical-line grid-line">
+        <div class="group cursor-pointer">
+        <div class="overflow-hidden bg-gray-200 aspect-[21/9] mb-6">
+            <a href="energyhome.html">
+                <img alt="Abstract Motion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant floor lamp in empty white room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQOg0dgACTQozd8Iq-0C79isaQi7jcU-nJmHYI4i40BgYldX4q38ECCNFhjskMMYQ68RGsTP9Igjh0Xynp248Lvp4bN-ln5SoOk0Ijl9H85RtJRRXQLDF4ZulWXiQrF-qhn-Y-IspMLY_dcNLS9TfcUib4CncObnm_ghLPZfkWX0XtXuC0MDuBt23M9Gdwp2fAoE-JHuIjHTIYcWEBv9O4UTtdhcQyWt4O9mTQUu19SLVmoTYAi4DH4UKu4VKNcYLT5yXLkjhVNXY"/>
+            </a>
+        </div>
+        <div class="flex justify-between items-baseline">
+            <h3 class="text-3xl font-bold uppercase tracking-tighter">Environment design</h3>
+            <span class="font-serif italic text-lg opacity-60">04 — Citizenship</span>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project 大字工作介绍 -->
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Playfair+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", /* Electric Blue variant as requested */
+                        "background-light": "#F9F9F9",
+                        "background-dark": "#121212",
+                        "charcoal": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .project-item:hover .project-image {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .project-image {
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px #1A1A1A;
+            color: transparent;
+        }
+        .dark .text-outline {
+            -webkit-text-stroke: 1px #F9F9F9;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-charcoal dark:text-background-light selection:bg-primary selection:text-white">
+
+
+<!-- Project List Section -->
+<div class="relative w-full">
+    <!-- Project 1 -->
+    <div class="project-item group relative py-12 border-t border-charcoal/10 dark:border-white/10 flex flex-col md:flex-row md:items-baseline justify-between cursor-none">
+    <div class="flex flex-col z-10">
+        <span class="font-serif italic text-sm mb-4 opacity-60 block md:hidden">2025 — Scottish business women</span>
+            <h2 class="text-[12vw] md:text-[8vw] leading-[0.85] font-bold tracking-tighter uppercase transition-all duration-500 group-hover:pl-8">
+                WEB <span class="text-outline group-hover:text-charcoal dark:group-hover:text-white transition-all">Design</span>
+            </h2>
+        </div>
+
+        <div class="hidden md:block text-right z-10">
+            <p class="font-serif italic text-lg text-charcoal/60 dark:text-white/60">2025</p>
+            <p class="text-xs font-bold uppercase tracking-widest mt-1">Scottish Tech army</p>
+        </div>
+    <!-- Hover Image Preview -->
+        <div class="project-image absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 md:w-[400px] md:h-[500px] opacity-0 scale-95 z-0 overflow-hidden rounded-lg shadow-2xl">
+        <img alt="Luxury editorial magazine spreads with bold typography" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Editorial magazine spreads with bold typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4VVE6FK7cQLgOiMK-ES5-VL4waNntAqAragYAWmAyB4p_6SkM-B8R2pM-uPx6lxFuIpwJYUC_qAJXy9Bz1KvXc-mmlYXbfH1lLHF2FlIxqScbGITTzWZtkjSZvXLUpABNyqpYp3co5A2YYke6BQs0EvMWGkoE-RgKVEMJni6mLn3_u_-45nbXglVKXoyFeL9BLK3LGOwl8kNVTQKy0n44EVCticwHRoogRHKlFts8oV7Vy-E57uxqfKhai1J-4EZxI1OaTC7gIt4"/>
+        </div>
+    </div>
+
+    <!-- Project 2 -->
+        <div class="project-item group relative py-12 border-t border-charcoal/10 dark:border-white/10 flex flex-col md:flex-row md:items-baseline justify-between cursor-none">
+        <div class="flex flex-col z-10">
+            <h2 class="text-[12vw] md:text-[8vw] leading-[0.85] font-bold tracking-tighter uppercase transition-all duration-500 group-hover:pl-8">
+                WORKSHOP <span class="text-outline group-hover:text-charcoal dark:group-hover:text-white transition-all">Strategy</span>
+            </h2>
+        </div>
+        <div class="hidden md:block text-right z-10">
+        <p class="font-serif italic text-lg text-charcoal/60 dark:text-white/60">2024</p>
+        <p class="text-xs font-bold uppercase tracking-widest mt-1">Insight</p>
+        </div>
+        <!-- Hover Image Preview -->
+        <div class="project-image absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 md:w-[450px] md:h-[300px] opacity-0 scale-95 z-0 overflow-hidden rounded-lg shadow-2xl">
+        <img alt="Modern brutalist architecture building facade" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Modern brutalist architecture building facade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHlazF09BQso5nmHpZYhVQBUV1lF4k-ERS5_jZ5JpoU8NR7rzoXRCERPwGKjTKOBCMYUtulbIIZLqVxGJ7CwGQpS2JWyJenGiA7dRcMSW-TyaqbvZQLs-oiXzq0C12bxRgWaw2VM_OfQ03sbW-sAzImqujFgkCcx_U952U7x4f1LZQ3onoTNkqVCfxA-6g4uXwKE5OfPeoyNBXh3uvZtn6MKUB89po5qxobrnl8aIifBUYkKG4Qyb5sXR7kBbIBzg1VXBxFe7fmgU"/>
+        </div>
+        </div>
+    <!-- Project 3 -->
+        <div class="project-item group relative py-12 border-t border-charcoal/10 dark:border-white/10 flex flex-col md:flex-row md:items-baseline justify-between cursor-none">
+        <div class="flex flex-col z-10">
+            <h2 class="text-[12vw] md:text-[8vw] leading-[0.85] font-bold tracking-tighter uppercase transition-all duration-500 group-hover:pl-8">
+            User <span class="text-outline group-hover:text-charcoal dark:group-hover:text-white transition-all">research</span>
+            </h2>
+        </div>
+        <div class="hidden md:block text-right z-10">
+        <p class="font-serif italic text-lg text-charcoal/60 dark:text-white/60">2023</p>
+        <p class="text-xs font-bold uppercase tracking-widest mt-1">Microport</p>
+        </div>
+        <!-- Hover Image Preview -->
+        <div class="project-image absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 md:w-[400px] md:h-[400px] opacity-0 scale-95 z-0 overflow-hidden rounded-lg shadow-2xl">
+        <div class="w-full h-full bg-charcoal flex items-center justify-center p-12">
+        <span class="text-white text-6xl font-black italic tracking-tighter">ABC</span>
+        </div>
+        </div>
+        </div>
+    <!-- Project 4 -->
+        <div class="project-item group relative py-12 border-y border-charcoal/10 dark:border-white/10 flex flex-col md:flex-row md:items-baseline justify-between cursor-none">
+        <div class="flex flex-col z-10">
+        <h2 class="text-[12vw] md:text-[8vw] leading-[0.85] font-bold tracking-tighter uppercase transition-all duration-500 group-hover:pl-8">
+            Prompt <span class="text-outline group-hover:text-charcoal dark:group-hover:text-white transition-all">engineering</span>
+        </h2>
+        </div>
+        <div class="hidden md:block text-right z-10">
+        <p class="font-serif italic text-lg text-charcoal/60 dark:text-white/60">2025-present</p>
+        <p class="text-xs font-bold uppercase tracking-widest mt-1">toy library</p>
+        </div>
+    <!-- Hover Image Preview -->
+    <div class="project-image absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 md:w-[500px] md:h-[350px] opacity-0 scale-95 z-0 overflow-hidden rounded-lg shadow-2xl">
+    <img alt="Exhibition space with abstract lighting" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Exhibition space with abstract lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnZIRc4gSqYvsUAmPYP8d56uIDG1-PhtnkxvKdcDLVWv0oD7nHrCZ04w5ebCyw9tUMoJX9gg2EwBaU56ducEBGfJOEydGMiRA7HLv-E2zDq1CJxITQyqwAFqJVcojSDTx3yyzrqcQaAMLuN1q5Xp0gHgJE3FrOa5Eq7PUL33fuZCsjmdZvjPCxfhEaeClYjUQ_OfRzugn0DErGZga3PpglrcfLxsgNQuKeWA8gLTUgrXWe9ZB36fB9Yf63Z-_h9CQrfZaxXmHDFsQ"/>
+    </div>
+    </div>
+    </div>
+
+<!-- Newsletter / Contact Block -->
+    <section class="grid grid-cols-1 md:grid-cols-2 border-b border-ink/10 dark:border-background-light/10">
+    <div class="p-6 md:p-12 vertical-line grid-line border-l-0">
+    <h2 class="text-5xl font-bold uppercase tracking-tighter mb-8 leading-none">Let's build <br/>something <br/><span class="text-primary italic font-light">meaningful.</span></h2>
+    <p class="font-serif text-xl mb-12 max-w-sm">Currently open to new role and work. Available for worldwide collaborations.</p>
+    <a class="text-2xl font-bold border-b-4 border-primary pb-1 hover:text-primary transition-colors" href="zhaoshuang610@gmail.com">zhaoshuang610@gmail.com</a>
+    </div>
+    <div class="p-6 md:p-12 vertical-line grid-line flex flex-col justify-between">
+    <div>
+    <p class="text-xs uppercase tracking-[0.3em] font-bold mb-6">Studio News</p>
+    <div class="flex flex-col gap-8">
+    <div class="border-b border-ink/10 dark:border-background-light/10 pb-4">
+    <span class="text-xs opacity-50 uppercase block mb-1">Dec 2023</span>
+    <a class="text-lg font-bold hover:underline" href="#">New York Design Week — Featured Artist</a>
+    </div>
+    <div class="border-b border-ink/10 dark:border-background-light/10 pb-4">
+    <span class="text-xs opacity-50 uppercase block mb-1">Nov 2023</span>
+    <a class="text-lg font-bold hover:underline" href="#">Exploring Minimalist Motion Systems</a>
+    </div>
+    </div>
+    </div>
+    <div class="mt-12 flex gap-6">
+    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary" href="#">Instagram</a>
+    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary" href="#">Behance</a>
+    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary" href="#">Twitter / X</a>
+    </div>
+    </div>
+    </section>
+</body>
+</html>
+
+
+   
+
+

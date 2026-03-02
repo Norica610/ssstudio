@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>UX Portfolio: Energy Citizen Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class", 
+            theme: {
+                extend: {
+                    colors: { 
+                        primary: "#359EFF", 
+                        navy: "#0B1F3A",
+                        ink: "#1A1A1A",
+                        "bg-soft": "#f5f7f8"
+                    }, 
+                    fontFamily: { 
+                        sans: ["Inter", "sans-serif"], 
+                        display: ["Inter", "sans-serif"], 
+                        serif: ["Lora", "serif"] 
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .grid-line { border-bottom: 1px solid rgba(26, 26, 26, 0.08); }
+        .vertical-line { border-left: 1px solid rgba(26, 26, 26, 0.08); }
+    </style>
+</head>
+<body class="bg-bg-soft text-ink font-sans antialiased">
+
+<header class="sticky top-0 z-50 w-full border-b border-ink/5 bg-white/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+        <a class="text-xl font-extrabold uppercase tracking-tighter hover:text-primary transition-colors" href="#">Studio.</a>
+        <nav class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest opacity-60">
+            <a class="hover:text-primary transition-colors" href="#overall">Strategy</a>
+            <a class="hover:text-primary transition-colors" href="#insights">Insights</a>
+            <a class="hover:text-primary transition-colors" href="#touchpoint">Concept</a>
+        </nav>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto">
+    <section id="overall" class="grid grid-cols-1 md:grid-cols-12 border-b border-ink/5 px-8 py-20 gap-8">
+        <div class="md:col-span-3">
+            <h2 class="text-[11px] uppercase tracking-[0.3em] font-bold opacity-30">01 — Strategy</h2>
+        </div>
+        <div class="md:col-span-9 max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter uppercase leading-tight mb-6">
+                Roadmap to make <br/> life <span class="text-primary italic font-serif lowercase">greener</span>
+            </h1>
+            <p class="text-lg md:text-xl font-serif italic text-ink/60 leading-relaxed">
+                Despite high media awareness, actual adoption remains low due to technological, financial, and socio-cultural barriers[cite: 4, 7]. We help people become <span class="text-ink font-bold not-italic">active energy citizens</span> through renewable awareness[cite: 9, 15].
+            </p>
+        </div>
+    </section>
+
+    <section id="insights" class="grid grid-cols-1 md:grid-cols-12 border-b border-ink/5 px-8 py-20 gap-8 bg-white">
+        <div class="md:col-span-3">
+            <h2 class="text-[11px] uppercase tracking-[0.3em] font-bold opacity-30">03 — Insights</h2>
+        </div>
+        <div class="md:col-span-9">
+            <div class="max-w-2xl mb-16">
+                <h3 class="text-2xl font-bold tracking-tight mb-4 italic">Bridging the "Agency Gap" [cite: 435]</h3>
+                <p class="text-base leading-relaxed opacity-70">
+                    Energy transition is often hindered by high upfront investments (e.g., £5500/year) [cite: 234, 235] and the "NIMBY" effect[cite: 247]. Our research identifies three critical pivots:
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-10">
+                    <div class="group">
+                        <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Micro-verification Builds Trust [cite: 251]</h4>
+                        <p class="text-sm leading-relaxed opacity-60 font-serif italic">
+                            "People aren't ready for £10k solar roofs, but are willing to try portable kits[cite: 217, 251]. If it charges their laptop, they are 10x more likely to join community projects later[cite: 708]."
+                        </p>
+                    </div>
+                    <div class="group">
+                        <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Visibility Over Abstract Data [cite: 412]</h4>
+                        <p class="text-sm leading-relaxed opacity-60 font-serif italic">
+                            "Human-scale metrics (e.g., Balcony work hours) resonate more than energy units like kWh[cite: 414]. Invisible energy must become tangible."
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-bg-soft p-6 rounded border border-ink/5">
+                    <div class="aspect-video bg-white flex items-center justify-center border border-ink/5 mb-4 font-mono text-[10px] opacity-30">
+                        
+                    </div>
+                    <p class="text-[10px] uppercase tracking-widest font-bold opacity-30 text-center">Fig 2. Renewable Electricity Generation of Scotland [cite: 87, 90]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="touchpoint" class="grid grid-cols-1 md:grid-cols-12 border-b border-ink/5 px-8 py-20 gap-8">
+        <div class="md:col-span-3">
+            <h2 class="text-[11px] uppercase tracking-[0.3em] font-bold opacity-30">04 — Concept</h2>
+        </div>
+        <div class="md:col-span-9">
+            <h3 class="text-2xl font-bold tracking-tight mb-10 italic">Three Layers of Influence [cite: 535]</h3>
+            
+            <div class="grid md:grid-cols-3 gap-1">
+                <div class="p-8 bg-white border border-ink/5 hover:border-primary transition-all">
+                    <span class="text-[10px] font-bold opacity-30 uppercase block mb-6 text-emerald-600">Level 01 · Experience [cite: 536]</span>
+                    <h4 class="font-bold text-lg mb-2">Portable Device</h4>
+                    <p class="text-xs leading-relaxed opacity-50">Low-cost entry to verify green energy with immediate feedback[cite: 538, 546].</p>
+                </div>
+                <div class="p-8 bg-white border border-ink/5 hover:border-primary transition-all">
+                    <span class="text-[10px] font-bold opacity-30 uppercase block mb-6 text-amber-500">Level 02 · Action [cite: 539]</span>
+                    <h4 class="font-bold text-lg mb-2">Eco-Home</h4>
+                    <p class="text-xs leading-relaxed opacity-50">Taking ownership of energy through personal household planning[cite: 542].</p>
+                </div>
+                <div class="p-8 bg-white border border-ink/5 hover:border-primary transition-all">
+                    <span class="text-[10px] font-bold opacity-30 uppercase block mb-6 text-navy">Level 03 · Participate [cite: 543]</span>
+                    <h4 class="font-bold text-lg mb-2">Community Energy</h4>
+                    <p class="text-xs leading-relaxed opacity-50">Full grid integration and collective ownership by 2030[cite: 561, 705].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-center opacity-30 gap-6">
+    <span class="text-xs font-bold uppercase tracking-widest">#CollabGreenLife [cite: 593]</span>
+    <p class="text-xs uppercase tracking-widest text-center">Design for Social Innovation • University of Glasgow • 2026 [cite: 689, 703]</p>
+</footer>
+
+</body>
+</html>

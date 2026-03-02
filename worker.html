@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio — Studio.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E31E24", // 提取该网页的标志性红色
+                        ink: "#000000",
+                        "background-light": "#FFFFFF"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* 文字切换渐变效果 */
+        .fade-text {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-ink font-sans antialiased">
+
+<header class="sticky top-0 z-50 w-full border-b-4 border-ink bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+        <a href="index.html" class="text-3xl font-[900] tracking-tighter uppercase italic">Studio.</a>
+        <nav class="hidden md:flex items-center gap-10 font-bold text-sm tracking-[0.2em] uppercase">
+            <a class="text-primary" href="index.html">Work</a>
+            <a class="hover:text-primary transition-colors" href="about.html">About</a>
+            <a class="hover:text-primary transition-colors" href="resume.html">Resume</a>
+        </nav>
+        <button class="bg-ink hover:bg-primary text-white px-8 py-3 font-bold text-xs uppercase tracking-[0.2em] transition-all">
+            Contact
+        </button>
+    </div>
+</header>
+
+<main class="max-w-[1440px] mx-auto">
+    <section class="px-6 md:px-12 py-32 border-b-4 border-ink">
+        <div class="max-w-5xl">
+            <h2 class="text-6xl md:text-8xl font-[900] tracking-tighter uppercase leading-[0.9] mb-12">
+                We believe in <br/>
+                <span id="rotating-text" class="text-primary fade-text italic">Meaningful Design</span>
+            </h2>
+            <p class="text-xl md:text-2xl font-bold max-w-2xl leading-tight opacity-80 uppercase">
+                A Product Designer focused on creating high-impact solutions for complex digital problems.
+            </p>
+        </div>
+    </section>
+
+    <section id="overall" class="grid grid-cols-1 md:grid-cols-12 border-b-4 border-ink">
+        <div class="md:col-span-4 border-b-4 md:border-b-0 md:border-r-4 border-ink p-8 md:p-12">
+            <h3 class="text-xs uppercase tracking-[0.4em] font-black opacity-40">01 — Overall</h3>
+        </div>
+        <div class="md:col-span-8 p-8 md:p-12">
+            <h1 class="text-4xl md:text-6xl font-[900] uppercase tracking-tighter leading-none mb-8">
+                Reward System <br/>Redesign
+            </h1>
+            <p class="text-xl md:text-2xl font-bold leading-snug max-w-2xl">
+                Evaluating and reimagining the POS rewards experience to bridge the gap between transactional utility and emotional engagement.
+            </p>
+        </div>
+    </section>
+
+    <section id="work" class="grid grid-cols-1 md:grid-cols-12 border-b-4 border-ink">
+        <div class="md:col-span-4 border-b-4 md:border-b-0 md:border-r-4 border-ink p-8 md:p-12">
+            <h3 class="text-xs uppercase tracking-[0.4em] font-black opacity-40">02 — What did I do?</h3>
+        </div>
+        <div class="md:col-span-8 p-8 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-2xl font-[900] uppercase italic text-primary mb-4 italic">The Role</h4>
+                    <p class="text-lg font-bold leading-tight uppercase">Lead Designer, UX Strategy, Branding, Prototyping</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-[900] uppercase italic text-primary mb-4 italic">Who'd I work with?</h4>
+                    <p class="text-lg font-bold leading-tight uppercase">Product Team, Stakeholders, 12+ Retail Stores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary text-white p-12 md:p-24">
+        <div class="max-w-4xl">
+            <p class="text-xs uppercase tracking-[0.5em] font-black mb-8">Full Case Study</p>
+            <a href="YOUR_NOTION_URL" target="_blank" class="group">
+                <h2 class="text-5xl md:text-8xl font-[900] uppercase tracking-tighter leading-none group-hover:underline decoration-8 underline-offset-8">
+                    Read the process on Notion —>
+                </h2>
+            </a>
+        </div>
+    </section>
+</main>
+
+<script>
+    // 文字轮播逻辑
+    const words = ["Meaningful Design", "User Empowerment", "Bold Innovation", "Clean Systems"];
+    let index = 0;
+    const textElement = document.getElementById('rotating-text');
+
+    setInterval(() => {
+        textElement.style.opacity = 0; // 渐隐
+        setTimeout(() => {
+            index = (index + 1) % words.length;
+            textElement.textContent = words[index];
+            textElement.style.opacity = 1; // 渐显
+        }, 500); 
+    }, 2000); // 2秒切换一次
+</script>
+
+</body>
+</html>
