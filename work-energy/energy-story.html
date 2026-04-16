@@ -46,14 +46,14 @@ tailwind.config = {
 
 
 <!-- NAV -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-[100] px-8 py-4 flex justify-between items-center transition-all duration-500">
-  <div class="flex items-center gap-2 font-extrabold text-[1.1rem] tracking-tight">
-    <span class="w-2 h-2 rounded-full bg-lime"></span> Energy Citizen
+<header class="sticky top-0 z-50 w-full border-b border-ink/10 dark:border-background-light/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+    <a href="/index.html" class="text-2xl font-black tracking-tighter uppercase hover:text-primary transition-colors">SStudio.</a>
+    <nav class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
+      <a href="/index.html" class="hover:text-primary transition-colors">Home</a>
+    </nav>
   </div>
-  <div class="hidden md:flex items-center gap-8">
-    <a href="/index.html" class="bg-navy text-lime px-6 py-2.5 text-[0.8rem] font-semibold tracking-widest uppercase hover:bg-ink transition-all">Go back</a>
-  </div>
-</nav>
+</header>
 
 
 
