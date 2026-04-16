@@ -67,14 +67,14 @@ tailwind.config = {
     <div class="space-y-8">
       <div class="label">Case Study · Glasgow 2024</div>
 
-      <h1 class="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tighter">
-        I designed a tool that turns<br/>
+      <h1 class="text-[clamp(1.8rem,3.5vw,3rem)] font-extrabold leading-[0.95] tracking-tighter">
+        A tool that turns<br/>
         <em class="font-serif italic text-emerald-600">abstract energy data</em><br/>
         into things people<br/>can actually picture.
       </h1>
 
       <p class="text-navy/60 text-lg leading-relaxed font-sans max-w-md">
-        Energy Citizen is a working prototype that helps Glasgow residents move from grid reliance to renewable autonomy — by replacing kWh with hours of laptop work, phone charges, and CO₂ saved.
+        Energy Citizen is an interactive tool that helps Glasgow residents become active participants in renewable energy — not just consumers of it. It makes invisible options visible (eco-villages, community co-ops, portable kits), translates abstract energy data into outcomes people can picture, and collects engagement data that feeds back to community organisations and policy makers.
       </p>
 
       <div class="flex flex-wrap gap-4 pt-2">
@@ -113,7 +113,7 @@ tailwind.config = {
   <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-navy/10 max-w-4xl">
     <div>
       <div class="font-mono text-[0.6rem] uppercase tracking-widest opacity-40 mb-2">Role</div>
-      <div class="text-sm font-semibold">UX Research<br/>Service Design<br/>Prototype</div>
+      <div class="text-sm font-semibold">UX Research<br/>Service Design<br/>Dashboard design</div>
     </div>
     <div>
       <div class="font-mono text-[0.6rem] uppercase tracking-widest opacity-40 mb-2">Timeline</div>
@@ -121,7 +121,7 @@ tailwind.config = {
     </div>
     <div>
       <div class="font-mono text-[0.6rem] uppercase tracking-widest opacity-40 mb-2">Partners</div>
-      <div class="text-sm font-semibold">Community Energy Scotland<br/>Friends of the Earth</div>
+      <div class="text-sm font-semibold">Community Energy Glasgow<br/>Friends of the Earth</div>
     </div>
   </div>
 
@@ -194,97 +194,35 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ═════════════════ SCREEN 3: THE 3 KEY DECISIONS ═════════════════ -->
-<section class="py-32 px-8 md:px-16">
-  <div class="max-w-7xl mx-auto">
-
-    <div class="mb-20 max-w-3xl">
-      <div class="label mb-6">02 · Key Decisions</div>
-      <h2 class="text-[clamp(2rem,3vw,3rem)] font-extrabold leading-[0.95] tracking-tighter">
-        Three product decisions,<br/>each tied to one barrier.
-      </h2>
-    </div>
-
-    <div class="space-y-24">
-
-      <!-- Decision 1: Lived Metrics -->
-      <div class="fade-up grid lg:grid-cols-[1fr_1.3fr] gap-12 items-start">
-        <div class="space-y-5">
-          <div class="font-mono text-[0.6rem] uppercase tracking-widest text-emerald-600 font-bold">Decision 01 · For the cognitive barrier</div>
-          <h3 class="text-3xl font-extrabold leading-tight">Replace kWh<br/>with <em class="font-serif italic text-emerald-600">human units.</em></h3>
-          <p class="text-navy/65 text-base leading-relaxed font-sans">
-            Every output translates to <strong>laptop hours</strong>, <strong>phone charges</strong>, <strong>CO₂ saved</strong> — units anyone can picture against their actual day.
-          </p>
-          <div class="bg-navy/5 border-l-2 border-navy p-5">
-            <div class="font-mono text-[0.6rem] uppercase tracking-widest opacity-50 mb-2">Trade-off</div>
-            <p class="text-sm leading-relaxed">Considered an educational page explaining kWh. Rejected — context-switching to learn is the friction we're removing, not adding.</p>
-          </div>
-        </div>
-        <!-- ↓ Calculator screenshot from energy.html
-             Save as: photo/decision-calculator.png -->
-        <div class="w-fit mx-auto">
-          <img src="asset/2.png" alt="Calculator with lived metrics" class="max-h-[380px] w-auto rounded-xl shadow-md"/>
-        </div>
-      </div>
-
-      <!-- Decision 2: Roadmap -->
-      <div class="fade-up grid lg:grid-cols-[1.3fr_1fr] gap-12 items-start">
-        <!-- ↓ 3-stage roadmap screenshot
-             Save as: photo/decision-roadmap.png -->
-        <div class="rounded-xl overflow-hidden border border-navy/10 shadow-sm aspect-video">
-          <img src="asset/threestage.png" alt="Three-stage roadmap" class="w-full h-full object-contain object-center"/>
-        </div>
-        <div class="space-y-5">
-          <div class="font-mono text-[0.6rem] uppercase tracking-widest text-emerald-600 font-bold">Decision 02 · For the financial barrier</div>
-          <h3 class="text-3xl font-extrabold leading-tight">Start at <em class="font-serif italic text-emerald-600">under £50.</em><br/>Earn the £5,500 step.</h3>
-          <p class="text-navy/65 text-base leading-relaxed font-sans">
-            A 3-stage roadmap — Individual → Social → Collaborative. Stage 1 is a portable solar kit anyone can verify in a week. Verified success at Stage 1 makes Stage 2 feel earned, not reckless.
-          </p>
-          <div class="bg-navy/5 border-l-2 border-navy p-5">
-            <div class="font-mono text-[0.6rem] uppercase tracking-widest opacity-50 mb-2">Trade-off</div>
-            <p class="text-sm leading-relaxed">Considered direct community signup with payment plans. Rejected — financial friction isn't solved by spreading payments. It's solved by proving value first.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Decision 3: Digital Meadow -->
-      <div class="fade-up grid lg:grid-cols-[1fr_1.3fr] gap-12 items-start">
-        <div class="space-y-5">
-          <div class="font-mono text-[0.6rem] uppercase tracking-widest text-emerald-600 font-bold">Decision 03 · For the social barrier</div>
-          <h3 class="text-3xl font-extrabold leading-tight">Make the <em class="font-serif italic text-emerald-600">invisible visible.</em></h3>
-          <p class="text-navy/65 text-base leading-relaxed font-sans">
-            The Digital Meadow — a growth state tied to your generation — gives individual action a public identity. Your meadow grows. Others see it. Free-riding stops being the default position.
-          </p>
-          <div class="bg-navy/5 border-l-2 border-navy p-5">
-            <div class="font-mono text-[0.6rem] uppercase tracking-widest opacity-50 mb-2">Trade-off</div>
-            <p class="text-sm leading-relaxed">Considered hard metrics like neighbourhood leaderboards. Rejected — competition shifts motivation from intrinsic ("I'm growing this") to extrinsic ("I'm beating Sarah").</p>
-          </div>
-        </div>
-        <!-- ↓ Digital Meadow screenshot
-             Save as: photo/decision-meadow.png -->
-        <div class="w-fit mx-auto">
-          <img src="asset/3.png" alt="Digital Meadow growth visualisation" class="max-h-[380px] w-auto rounded-xl shadow-md"/>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ═════════════════ SCREEN 4: WHAT HAPPENED + REFLECTION ═════════════════ -->
 <section class="bg-navy py-32 px-8 md:px-16">
   <div class="max-w-7xl mx-auto">
  
     <div class="grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
  
-      <div class="space-y-6">
+      <div class="space-y-6 lg:sticky lg:top-28">
         <div class="label text-lime/70">03 · What Happened</div>
         <h2 class="text-white text-[clamp(2rem,3vw,3rem)] font-extrabold leading-[0.95] tracking-tighter">
           The framing<br/>was <em class="font-serif italic text-lime">validated</em><br/>by policy.
         </h2>
+ 
+        <!-- Workshop evidence photos -->
+        <div class="grid grid-cols-3 gap-2 pt-4">
+          <div class="rounded-lg overflow-hidden border border-white/10">
+            <img src="asset/w21.png" alt="Workshop — barrier analysis" class="w-full h-28 object-cover grayscale hover:grayscale-0 transition-all duration-500"/>
+          </div>
+          <div class="rounded-lg overflow-hidden border border-white/10">
+            <img src="asset/w22.png" alt="Workshop — scenario design" class="w-full h-28 object-cover grayscale hover:grayscale-0 transition-all duration-500"/>
+          </div>
+          <div class="rounded-lg overflow-hidden border border-white/10">
+            <img src="asset/w23.png" alt="Workshop — people-centred energy system sketch" class="w-full h-28 object-cover grayscale hover:grayscale-0 transition-all duration-500"/>
+          </div>
+        </div>
+        <p class="font-mono text-[0.55rem] uppercase tracking-widest text-white/20">Workshop · Glasgow 2025 · 15 participants</p>
       </div>
  
       <div class="space-y-12">
+
  
         <!-- Outcome 2: Awareness -->
         <div class="bg-white/5 border border-white/10 p-8">
@@ -298,6 +236,11 @@ tailwind.config = {
           <p class="text-white/50 text-sm leading-relaxed font-sans mt-3">
             Because it's a web tool — not a static PDF — it also functions as a <strong class="text-white/80">live leaflet</strong> for outreach partners like Friends of the Earth and Community Energy Scotland. They can share a single URL at workshops, library events, or social media. The content updates once; every recipient sees the latest version. Distribution cost: zero.
           </p>
+          <!-- Physical leaflet — the offline counterpart -->
+          <div class="mt-6 overflow-hidden">
+            <img src="asset/Frame 60.png" alt="Physical leaflet — 5-panel energy roadmap distributed at workshops and libraries" class="w-full h-auto"/>
+          </div>
+          <p class="font-mono text-[0.55rem] uppercase tracking-widest text-white/20 mt-2">Physical counterpart — distributed at workshops &amp; libraries alongside the web tool</p>
         </div>
  
         <!-- Reflection: 2 honest learnings -->
@@ -311,6 +254,7 @@ tailwind.config = {
             <p class="text-white/70 text-sm leading-relaxed font-sans">I tested with 12 people but never measured the thing that matters: did anyone <em>actually</em> buy a portable kit after using the tool? Without that loop closed, the impact claim stays directional, not proven.</p>
           </div>
         </div>
+ 
  
       </div>
     </div>
