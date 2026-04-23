@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colorful Time — Phone</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{cream:'#FFF5E4',sand:'#F5E8D3',ink:'#0F1D3A',inkSoft:'#2A3A5C',teal:'#1EB5A6',tealDark:'#0F7F76',coral:'#FF6B4A',fire:'#ED1C24',sun:'#FFD429',earth:'#2FA84A',lime:'#A8D22A',cool:'#1E9BE8',plum:'#C215C2',ora:'#FF8A1F'},fontFamily:{serif:['"Fraunces"','serif'],sans:['"DM Sans"','sans-serif'],mono:['"JetBrains Mono"','monospace']}}}}
+</script>
+<link rel="stylesheet" href="colorful-time-phone.css">
+</head>
+<body>
+<div class="phone" id="phone">
+      <!-- SPLASH -->
+      <div class="screen active" id="s-splash">
+        <div class="h-full flex flex-col items-center justify-center px-8 text-center bg-cream relative overflow-hidden" style="min-height:100%">
+          <!-- Hand-drawn org shapes bg -->
+          <svg class="blob" style="top:60px;right:-40px;width:200px" viewBox="0 0 200 200"><path d="M50 40 Q 20 80, 40 130 Q 80 180, 140 160 Q 200 130, 180 70 Q 150 10, 90 20 Q 60 25, 50 40 Z" fill="#FFD429" opacity=".35"/></svg>
+          <svg class="blob" style="bottom:200px;left:-30px;width:160px" viewBox="0 0 200 200"><path d="M60 30 Q 15 70, 30 140 Q 60 190, 130 170 Q 190 140, 170 70 Q 140 10, 80 20 Q 65 25, 60 30 Z" fill="#1E9BE8" opacity=".25"/></svg>
+
+          <div class="a-scale" style="position:relative;margin-bottom:36px">
+            <img src="app-assets/char-yellow.png" class="char a-brth" style="width:130px;height:130px">
+            <img src="app-assets/char-red.png" class="char a-float" style="width:68px;height:68px;position:absolute;bottom:-12px;right:-38px;animation-delay:.4s">
+            <img src="app-assets/char-purple.png" class="char a-float" style="width:88px;position:absolute;top:-30px;right:-20px;animation-delay:.2s">
+            <img src="app-assets/char-green.png" class="char a-float" style="width:68px;position:absolute;top:0;left:-44px;animation-delay:.8s">
+            <img src="app-assets/char-blue.png" class="char a-float" style="width:52px;position:absolute;bottom:10px;left:-24px;animation-delay:1.2s">
+          </div>
+
+          <h1 class="a-up font-serif text-[2.4rem] leading-[1.02] text-ink mb-3" style="font-weight:700">Colorful Time</h1>
+          <p class="a-up-1 text-inkSoft/65 text-[.95rem] mb-10 max-w-[280px] leading-relaxed">Play with colour, meet your opposites,<br/>and find a bit more of yourself.</p>
+
+          <button onclick="goTo('s-ob1')" class="a-up-2 btn-coral mb-3">Get started →</button>
+          <button onclick="goTo('s-home')" class="a-up-3 text-ink/45 text-sm font-medium">I already have an account</button>
+        </div>
+      </div>
+
+      <!-- ONBOARD 1 -->
+      <div class="screen" id="s-ob1">
+        <div class="flex-1 flex flex-col px-8 pt-16 pb-10 bg-cream relative overflow-hidden">
+          <button onclick="goTo('s-splash')" class="absolute top-14 left-6 text-ink/40 text-sm font-medium z-10">←</button>
+          <div class="flex-1 flex flex-col items-center justify-center text-center relative z-10">
+            <div class="a-scale" style="position:relative;margin-bottom:32px">
+              <img src="app-assets/char-red.png" class="char a-wob" style="width:180px">
+            </div>
+            <h2 class="a-up font-serif text-[1.7rem] text-ink leading-tight mb-3" style="font-weight:700">Every personality<br/>leads with a <em class="text-fire">colour</em>.</h2>
+            <p class="a-up-1 text-inkSoft/55 text-[.95rem] leading-relaxed max-w-[280px]">Based on Carl Jung's psychology, we map your energy to one of four colours — red, yellow, green, blue.</p>
+          </div>
+          <div class="flex gap-2 justify-center mb-6">
+            <span class="prog-dot on"></span><span class="prog-dot"></span><span class="prog-dot"></span>
+          </div>
+          <button onclick="goTo('s-ob2')" class="btn-primary">Next</button>
+        </div>
+      </div>
+
+      <!-- ONBOARD 2 -->
+      <div class="screen" id="s-ob2">
+        <div class="flex-1 flex flex-col px-8 pt-16 pb-10 bg-cream relative overflow-hidden">
+          <button onclick="goTo('s-ob1')" class="absolute top-14 left-6 text-ink/40 text-sm font-medium z-10">←</button>
+          <div class="flex-1 flex flex-col items-center justify-center text-center relative z-10">
+            <div class="a-scale" style="position:relative;margin-bottom:32px;width:260px;height:160px">
+              <img src="app-assets/char-red.png" class="char a-float" style="width:100px;position:absolute;top:20px;left:0">
+              <img src="app-assets/char-green.png" class="char a-float" style="width:100px;position:absolute;top:10px;right:0;animation-delay:.6s">
+              <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 260 160" fill="none"><path d="M 90 80 Q 130 40, 170 80" stroke="#FF6B4A" stroke-width="3" stroke-dasharray="4 6" stroke-linecap="round"/><circle cx="130" cy="56" r="4" fill="#FF6B4A"/></svg>
+            </div>
+            <h2 class="a-up font-serif text-[1.7rem] text-ink leading-tight mb-3" style="font-weight:700">Opposites <em class="text-coral">complement</em>.</h2>
+            <p class="a-up-1 text-inkSoft/55 text-[.95rem] leading-relaxed max-w-[280px]">Red and Green balance each other. Yellow and Blue too. We'll help you find your complement nearby.</p>
+          </div>
+          <div class="flex gap-2 justify-center mb-6">
+            <span class="prog-dot"></span><span class="prog-dot on"></span><span class="prog-dot"></span>
+          </div>
+          <button onclick="goTo('s-ob3')" class="btn-primary">Next</button>
+        </div>
+      </div>
+
+      <!-- ONBOARD 3 -->
+      <div class="screen" id="s-ob3">
+        <div class="flex-1 flex flex-col px-8 pt-16 pb-10 bg-cream relative overflow-hidden">
+          <button onclick="goTo('s-ob2')" class="absolute top-14 left-6 text-ink/40 text-sm font-medium z-10">←</button>
+          <div class="flex-1 flex flex-col items-center justify-center text-center relative z-10">
+            <div class="a-scale" style="position:relative;margin-bottom:28px">
+              <img src="app-assets/char-yellow.png" class="char a-brth" style="width:130px">
+              <span class="a-wig" style="position:absolute;top:-8px;right:-8px;font-size:32px;display:inline-block">✦</span>
+            </div>
+            <h2 class="a-up font-serif text-[1.7rem] text-ink leading-tight mb-3" style="font-weight:700">Your <em class="text-ora">Third Age</em> is full of it.</h2>
+            <p class="a-up-1 text-inkSoft/55 text-[.95rem] leading-relaxed max-w-[280px]">Get activity ideas matched to your colour. Join workshops. Build a community of your own.</p>
+          </div>
+          <div class="flex gap-2 justify-center mb-6">
+            <span class="prog-dot"></span><span class="prog-dot"></span><span class="prog-dot on"></span>
+          </div>
+          <button onclick="goTo('s-ti')" class="btn-coral">Take the colour test</button>
+        </div>
+      </div>
+
+      <!-- TEST INTRO -->
+      <div class="screen" id="s-ti">
+        <div class="flex-1 flex flex-col px-7 pt-14 pb-8 bg-cream relative overflow-hidden">
+          <button onclick="goTo('s-ob3')" class="self-start mb-4 text-ink/40 text-sm font-medium z-10">← Back</button>
+          <div class="flex-1 flex flex-col items-center justify-center text-center relative z-10">
+            <div class="a-scale relative mb-8">
+              <div class="grid grid-cols-2 gap-3 w-[240px]">
+                <div style="background:#FFE8E5;padding:14px;border-radius:22px"><img src="app-assets/char-red.png" class="char" style="width:64px;margin:0 auto"></div>
+                <div style="background:#FFF4CC;padding:14px;border-radius:22px"><img src="app-assets/char-yellow.png" class="char" style="width:64px;margin:0 auto"></div>
+                <div style="background:#E1F0D9;padding:14px;border-radius:22px"><img src="app-assets/char-green.png" class="char" style="width:64px;margin:0 auto"></div>
+                <div style="background:#DAEFFB;padding:14px;border-radius:22px"><img src="app-assets/char-blue.png" class="char" style="width:64px;margin:0 auto"></div>
+              </div>
+            </div>
+            <h2 class="a-up font-serif text-[1.6rem] text-ink leading-tight mb-3" style="font-weight:700">5 little stories.<br/><em class="text-coral">4 ways to respond.</em></h2>
+            <p class="a-up-1 text-inkSoft/55 text-[.95rem] leading-relaxed px-2 mb-2">Read each story. Tap the response that feels <strong class="text-teal">most like you</strong>.</p>
+            <p class="a-up-2 text-inkSoft/35 text-xs font-mono">takes&nbsp;about&nbsp;2&nbsp;mins</p>
+          </div>
+          <button onclick="startTest()" class="btn-coral">Start the test</button>
+        </div>
+      </div>
+
+      <!-- TEST (scenario) -->
+      <div class="screen" id="s-test">
+        <div class="flex-1 flex flex-col scene-bg">
+          <div class="px-6 pt-14 pb-3 flex items-center justify-between">
+            <span class="text-xs font-mono text-ink/40 uppercase tracking-widest" id="tR">01&nbsp;/&nbsp;05</span>
+            <button onclick="goTo('s-ti')" class="text-ink/40 text-xs font-medium">exit</button>
+          </div>
+          <div class="flex gap-1.5 mb-4 px-6" id="tP"></div>
+
+          <!-- Scene -->
+          <div class="px-6" id="tScene"></div>
+
+          <!-- Question -->
+          <p class="px-6 font-serif text-[1.15rem] text-ink leading-snug font-bold mt-4 mb-4" id="tQ"></p>
+
+          <!-- Options -->
+          <div class="grid grid-cols-2 gap-3 px-5 mb-4" id="tC"></div>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="screen" id="s-result">
+        <div class="flex-1 flex flex-col bg-cream relative overflow-hidden">
+          <svg class="blob" style="top:-30px;right:-50px;width:220px;z-index:0" viewBox="0 0 200 200"><path id="rBlob" d="M50 40 Q 20 80, 40 130 Q 80 180, 140 160 Q 200 130, 180 70 Q 150 10, 90 20 Q 60 25, 50 40 Z" fill="#FFD429" opacity=".3"/></svg>
+          <div class="flex-1 overflow-y-auto px-7 pt-14 pb-4 flex flex-col items-center relative z-10">
+            <p class="a-up font-mono text-[.68rem] text-coral uppercase tracking-[.18em] mb-4">// your colour energy</p>
+
+            <!-- Primary + secondary characters -->
+            <div class="a-scale mb-3 flex items-end" id="rChar" style="gap:0"></div>
+
+            <h2 class="a-up-1 font-serif text-[2rem] text-ink text-center leading-none font-bold mb-1" id="rName"></h2>
+            <p class="a-up-2 text-[.72rem] font-mono text-inkSoft/50 mb-1 uppercase tracking-widest" id="rType"></p>
+            <p class="a-up-2 text-[.78rem] text-ink/55 mb-4 text-center font-serif italic" id="rSubTitle"></p>
+
+            <!-- Colour wheel showing position -->
+            <div class="a-up-2 mb-5" id="rWheel"></div>
+
+            <div class="a-up-3 card w-full p-5 mb-4">
+              <p class="text-[.92rem] text-inkSoft leading-relaxed" id="rDesc"></p>
+              <div class="mt-5 pt-5 border-t border-ink/5">
+                <p class="text-[.65rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-3">// traits</p>
+                <div class="flex flex-wrap gap-2" id="rTraits"></div>
+              </div>
+            </div>
+
+            <!-- Mix meter -->
+            <div class="w-full card p-5 mb-4">
+              <p class="text-[.65rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-3">// your mix</p>
+              <div id="rMix" class="space-y-2.5"></div>
+            </div>
+
+            <!-- Complement mini-block -->
+            <div class="w-full card p-5 mb-4" id="rCompBox">
+              <p class="text-[.65rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-3">// your complement</p>
+              <div class="flex items-center gap-3" id="rCompContent"></div>
+            </div>
+            <div style="height:20px"></div>
+          </div>
+          <!-- Sticky footer -->
+          <div class="px-5 pt-3 pb-5 bg-cream border-t border-ink/5 relative z-10">
+            <button onclick="goTo('s-act')" class="btn-coral mb-2">See activities →</button>
+            <button onclick="goTo('s-home')" class="w-full text-ink/45 text-sm font-medium py-1">Skip to home</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVITIES — discovery surface -->
+      <div class="screen" id="s-act">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="px-6 pt-14 pb-3 relative">
+              <div class="flex items-start justify-between mb-1">
+                <div>
+                  <p class="text-[.65rem] font-mono text-coral uppercase tracking-widest mb-1">// matched for you</p>
+                  <h2 class="font-serif text-[1.5rem] text-ink font-bold leading-tight" id="aT">Near you this week</h2>
+                  <p class="text-[.82rem] text-inkSoft/50 mt-1" id="aS">8 places · Glasgow G3 · filtered by colour</p>
+                </div>
+                <button onclick="goTo('s-home')" class="text-ink/40 text-sm">←</button>
+              </div>
+
+              <!-- Filter chips -->
+              <div class="flex gap-2 overflow-x-auto mt-4 -mx-6 px-6 pb-1" style="scrollbar-width:none">
+                <button class="chip chip-on" data-f="all">All</button>
+                <button class="chip" data-f="care">Care homes</button>
+                <button class="chip" data-f="community">Community</button>
+                <button class="chip" data-f="volunteer">Volunteer</button>
+                <button class="chip" data-f="learn">Learning</button>
+                <button class="chip" data-f="meet">Meetups</button>
+              </div>
+            </div>
+
+            <!-- Partner ribbon -->
+            <div class="px-6 mb-5">
+              <div class="card p-4 flex items-center gap-3" style="background:linear-gradient(95deg,#FFF4CC 0%,#FFE8C4 100%)">
+                <div class="shrink-0 w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+                  <span style="font-family:'Fraunces',serif;font-weight:700;color:#0F1D3A;font-size:.95rem">🤝</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-[.78rem] font-bold text-ink leading-tight">In partnership with Age Scotland, U3A & Volunteer Scotland</p>
+                  <p class="text-[.7rem] text-inkSoft/55 mt-0.5">Places and events verified for over-60s</p>
+                </div>
+                <button onclick="goTo('s-partners')" class="text-[.7rem] font-bold text-coral shrink-0">About ›</button>
+              </div>
+            </div>
+
+            <!-- Featured venue (care home) -->
+            <div class="px-6 mb-5">
+              <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-2">// featured venue</p>
+              <div class="card overflow-hidden cursor-pointer" onclick="openVenue('wingHong')">
+                <div class="placeholder" style="height:120px;border-radius:0">[ photo · Wing Hong Chinese Elderly Centre · community hall ]</div>
+                <div class="p-4">
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <div>
+                      <p class="text-[.62rem] font-mono text-coral uppercase tracking-widest">CARE · Day centre</p>
+                      <p class="font-serif text-[1.05rem] text-ink font-bold leading-tight mt-1">Wing Hong Chinese Elderly Centre</p>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full text-[.6rem] font-bold" id="matchBadge" style="background:#FFF4CC;color:#B88900;white-space:nowrap">87% match</span>
+                  </div>
+                  <p class="text-[.78rem] text-inkSoft/55 mt-1 leading-relaxed">Garnethill, Glasgow · 0.5 mi away · tea & lunch club, mahjong, Cantonese choir</p>
+                  <div class="flex items-center gap-1.5 mt-3">
+                    <span id="matchDots"></span>
+                    <span class="text-[.68rem] text-inkSoft/50 ml-1">Mostly yellows & greens here</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event list -->
+            <div class="px-6 mb-3">
+              <div class="flex items-baseline justify-between mb-2">
+                <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest">// events this week</p>
+                <span class="text-[.68rem] font-bold text-teal">Map view ⌕</span>
+              </div>
+            </div>
+            <div class="px-5 pb-6" id="aL"></div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab-item" onclick="goTo('s-home')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div><span>Home</span></div>
+            <div class="tab-item" onclick="goTo('s-ti')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div><span>Test</span></div>
+            <div class="tab-item active"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5L8 13 4 9l5.5-1z"/></svg></div><span>Activities</span></div>
+            <div class="tab-item" onclick="goTo('s-journal')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 4h12a2 2 0 012 2v14l-8-4-8 4V6a2 2 0 012-2z"/></svg></div><span>Journal</span></div>
+            <div class="tab-item" onclick="goTo('s-profile')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><span>You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VENUE DETAIL -->
+      <div class="screen" id="s-venue">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="placeholder relative" style="height:220px;border-radius:0">
+              <span id="vPhoto">[ hero photo · venue exterior ]</span>
+              <button onclick="goTo('s-act')" class="absolute top-14 left-5 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-ink font-bold">←</button>
+              <button class="absolute top-14 right-5 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center">♡</button>
+            </div>
+            <div class="px-6 pt-5 pb-4">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-[.62rem] font-mono text-coral uppercase tracking-widest" id="vKind">CARE · DAY CENTRE</p>
+                  <h2 class="font-serif text-[1.5rem] text-ink font-bold leading-tight mt-1" id="vName">Wing Hong Chinese Elderly Centre</h2>
+                  <p class="text-[.82rem] text-inkSoft/55 mt-1" id="vMeta">Garnethill · 0.5 mi · Mon-Fri 9am-4pm</p>
+                </div>
+              </div>
+
+              <!-- Colour-match endorsement block -->
+              <div class="mt-4 p-4 rounded-2xl" style="background:#FFF4CC;border:1.5px solid #FFD429">
+                <div class="flex items-center gap-3 mb-2">
+                  <img src="app-assets/char-yellow.png" class="char" style="width:44px">
+                  <div>
+                    <p class="text-[.7rem] font-mono text-inkSoft/50 uppercase tracking-widest">// your match</p>
+                    <p class="font-serif text-[1rem] text-ink font-bold leading-tight">A good home for yellows</p>
+                  </div>
+                </div>
+                <p class="text-[.78rem] text-inkSoft/70 leading-relaxed">Members here skew <strong>sunshine yellow</strong> and <strong>earth green</strong>. Expect chatty lunches, singing Tuesdays, and a gentle, social pace. You'll likely feel at home within a visit or two.</p>
+
+                <!-- Community mix bar -->
+                <div class="mt-3">
+                  <p class="text-[.62rem] font-mono text-inkSoft/45 uppercase tracking-widest mb-1.5">Community mix (42 members)</p>
+                  <div class="flex h-2.5 rounded-full overflow-hidden">
+                    <div style="width:12%;background:#ED1C24"></div>
+                    <div style="width:45%;background:#FFD429"></div>
+                    <div style="width:30%;background:#2FA84A"></div>
+                    <div style="width:13%;background:#1E9BE8"></div>
+                  </div>
+                  <div class="flex justify-between mt-1.5 text-[.6rem] font-mono text-inkSoft/55">
+                    <span>Red 12%</span><span>Yellow 45%</span><span>Green 30%</span><span>Blue 13%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Regular activities -->
+              <div class="mt-5">
+                <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-3">// what's on regularly</p>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-ink/5">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#FFF4CC"><img src="app-assets/char-yellow.png" style="width:26px"></span>
+                    <div class="flex-1">
+                      <p class="text-[.85rem] font-bold text-ink leading-tight">Cantonese choir</p>
+                      <p class="text-[.7rem] text-inkSoft/45 font-mono mt-0.5">TUE · 2 PM</p>
+                    </div>
+                    <button onclick="goTo('s-event')" class="text-[.7rem] font-bold text-teal">Join ›</button>
+                  </div>
+                  <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-ink/5">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#E1F0D9"><img src="app-assets/char-green.png" style="width:26px"></span>
+                    <div class="flex-1">
+                      <p class="text-[.85rem] font-bold text-ink leading-tight">Tea & dumpling lunch</p>
+                      <p class="text-[.7rem] text-inkSoft/45 font-mono mt-0.5">WED & FRI · 12 PM</p>
+                    </div>
+                    <button onclick="goTo('s-event')" class="text-[.7rem] font-bold text-teal">Join ›</button>
+                  </div>
+                  <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-ink/5">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#DAEFFB"><img src="app-assets/char-blue.png" style="width:26px"></span>
+                    <div class="flex-1">
+                      <p class="text-[.85rem] font-bold text-ink leading-tight">Mahjong afternoons</p>
+                      <p class="text-[.7rem] text-inkSoft/45 font-mono mt-0.5">THU · 1 PM</p>
+                    </div>
+                    <button onclick="goTo('s-event')" class="text-[.7rem] font-bold text-teal">Join ›</button>
+                  </div>
+                  <div class="flex items-center gap-3 p-3 bg-white rounded-2xl border border-ink/5">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#FFE8E5"><img src="app-assets/char-red.png" style="width:26px"></span>
+                    <div class="flex-1">
+                      <p class="text-[.85rem] font-bold text-ink leading-tight">Tai chi (beginners welcome)</p>
+                      <p class="text-[.7rem] text-inkSoft/45 font-mono mt-0.5">MON · 10 AM</p>
+                    </div>
+                    <button onclick="goTo('s-event')" class="text-[.7rem] font-bold text-teal">Join ›</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial -->
+              <div class="mt-5 p-4 rounded-2xl bg-white border border-ink/5">
+                <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-2">// from a member</p>
+                <p class="font-serif italic text-[.92rem] text-ink leading-relaxed">"I was shy to come at first. By the third Tuesday, I was leading the choir warm-up."</p>
+                <p class="text-[.75rem] text-inkSoft/50 mt-2">— Mrs Wong, yellow · member 3 years</p>
+              </div>
+
+              <!-- Partner badge -->
+              <div class="mt-5 flex items-center gap-3 p-3 rounded-2xl bg-white border border-ink/5">
+                <div class="w-10 h-10 rounded-lg bg-ink/5 flex items-center justify-center text-[.68rem] font-mono font-bold text-ink">A·S</div>
+                <div class="flex-1">
+                  <p class="text-[.78rem] font-bold text-ink leading-tight">Verified by Age Scotland</p>
+                  <p class="text-[.68rem] text-inkSoft/45">Standards & safeguarding checked · 2025</p>
+                </div>
+              </div>
+
+              <div style="height:100px"></div>
+            </div>
+          </div>
+          <div class="px-5 py-3 bg-cream border-t border-ink/5 flex gap-2">
+            <button class="flex-1 py-3.5 rounded-xl bg-white border border-ink/10 text-ink text-sm font-bold">Directions</button>
+            <button onclick="goTo('s-event')" class="flex-[1.6] py-3.5 rounded-xl bg-coral text-white text-sm font-bold" style="box-shadow:0 3px 0 #d9553a">Book a taster visit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVENT DETAIL / RSVP -->
+      <div class="screen" id="s-event">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="px-6 pt-14 pb-4">
+              <button onclick="goTo('s-venue')" class="text-ink/40 text-sm mb-4">← Back to venue</button>
+              <p class="text-[.62rem] font-mono text-coral uppercase tracking-widest mb-2">// tue · mar 12 · 2–4 pm</p>
+              <h2 class="font-serif text-[1.6rem] text-ink font-bold leading-tight">Cantonese choir,<br/>beginners session</h2>
+              <p class="text-[.82rem] text-inkSoft/55 mt-2">Wing Hong Centre · Garnethill · 0.5 mi</p>
+
+              <!-- Who's going -->
+              <div class="mt-5 p-4 rounded-2xl bg-white border border-ink/5">
+                <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-3">// 8 going · 4 from your match</p>
+                <div class="flex items-center gap-1 mb-3">
+                  <span class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center" style="background:#FFF4CC"><img src="app-assets/char-yellow.png" style="width:26px"></span>
+                  <span class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center -ml-2" style="background:#FFF4CC"><img src="app-assets/char-yellow.png" style="width:26px"></span>
+                  <span class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center -ml-2" style="background:#E1F0D9"><img src="app-assets/char-green.png" style="width:26px"></span>
+                  <span class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center -ml-2" style="background:#E1F0D9"><img src="app-assets/char-green.png" style="width:26px"></span>
+                  <span class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center -ml-2 bg-ink/5 text-[.62rem] font-mono text-ink/50 font-bold">+4</span>
+                </div>
+                <p class="text-[.78rem] text-inkSoft/65 leading-relaxed">Margaret, Priya and 2 other greens you might complement are coming.</p>
+              </div>
+
+              <!-- What to expect -->
+              <div class="mt-5">
+                <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-2">// what to expect</p>
+                <div class="space-y-2.5">
+                  <div class="flex gap-3"><span class="text-coral font-bold shrink-0">·</span><p class="text-[.85rem] text-inkSoft/75 leading-relaxed">Tea and biscuits while you arrive</p></div>
+                  <div class="flex gap-3"><span class="text-coral font-bold shrink-0">·</span><p class="text-[.85rem] text-inkSoft/75 leading-relaxed">Gentle warm-ups — no experience needed</p></div>
+                  <div class="flex gap-3"><span class="text-coral font-bold shrink-0">·</span><p class="text-[.85rem] text-inkSoft/75 leading-relaxed">Two traditional songs, lyrics provided in pinyin & English</p></div>
+                  <div class="flex gap-3"><span class="text-coral font-bold shrink-0">·</span><p class="text-[.85rem] text-inkSoft/75 leading-relaxed">Free · optional £2 donation to the centre</p></div>
+                </div>
+              </div>
+
+              <!-- Accessibility -->
+              <div class="mt-5 p-4 rounded-2xl" style="background:#E8F8F6">
+                <p class="text-[.62rem] font-mono uppercase tracking-widest mb-2" style="color:#0F7F76">// access</p>
+                <p class="text-[.8rem] text-inkSoft/75 leading-relaxed">Step-free entry · hearing loop · Cantonese & English support · community transport available</p>
+              </div>
+
+              <div style="height:100px"></div>
+            </div>
+          </div>
+          <div class="px-5 py-3 bg-cream border-t border-ink/5">
+            <button onclick="rsvpConfirm()" id="rsvpBtn" class="btn-coral">I'll be there →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTNERS -->
+      <div class="screen" id="s-partners">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="px-6 pt-14 pb-4">
+              <button onclick="goTo('s-act')" class="text-ink/40 text-sm mb-4">← Back</button>
+              <p class="text-[.65rem] font-mono text-coral uppercase tracking-widest mb-2">// partners & network</p>
+              <h2 class="font-serif text-[1.5rem] text-ink font-bold leading-tight">The people behind<br/>your match</h2>
+              <p class="text-[.85rem] text-inkSoft/55 mt-2 leading-relaxed">We connect your colour energy with trusted Third Age organisations across Scotland — not a marketplace, a network.</p>
+
+              <!-- Partner cards -->
+              <div class="mt-5 space-y-3">
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:#FFE8E5"><span class="font-serif font-bold text-fire">AS</span></div>
+                    <div class="flex-1">
+                      <p class="font-serif text-[1.02rem] font-bold text-ink leading-tight">Age Scotland</p>
+                      <p class="text-[.7rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-0.5">national charity · over-60s</p>
+                      <p class="text-[.8rem] text-inkSoft/65 mt-2 leading-relaxed">Verifies care homes and community centres. Provides the helpline, info guides and safeguarding standards behind every place in Colorful Time.</p>
+                      <div class="flex gap-2 mt-3 flex-wrap">
+                        <span class="px-2.5 py-1 rounded-full text-[.62rem] font-mono font-bold" style="background:#FFE8E5;color:#ED1C24">42 CENTRES</span>
+                        <span class="px-2.5 py-1 rounded-full text-[.62rem] font-mono font-bold" style="background:#FFE8E5;color:#ED1C24">HELPLINE 0800</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:#E1F0D9"><span class="font-serif font-bold text-earth">VS</span></div>
+                    <div class="flex-1">
+                      <p class="font-serif text-[1.02rem] font-bold text-ink leading-tight">Volunteer Scotland</p>
+                      <p class="text-[.7rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-0.5">volunteering · giving back</p>
+                      <p class="text-[.8rem] text-inkSoft/65 mt-2 leading-relaxed">Matches greens and reds with volunteer roles: befriending, foodbanks, green spaces, community kitchens. Many a few hours a week, close to home.</p>
+                      <div class="flex gap-2 mt-3 flex-wrap">
+                        <span class="px-2.5 py-1 rounded-full text-[.62rem] font-mono font-bold" style="background:#E1F0D9;color:#2FA84A">180+ ROLES</span>
+                        <span class="px-2.5 py-1 rounded-full text-[.62rem] font-mono font-bold" style="background:#E1F0D9;color:#2FA84A">PVG SUPPORT</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:#DAEFFB"><span class="font-serif font-bold text-cool">U3A</span></div>
+                    <div class="flex-1">
+                      <p class="font-serif text-[1.02rem] font-bold text-ink leading-tight">U3A Glasgow</p>
+                      <p class="text-[.7rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-0.5">learning · Third Age</p>
+                      <p class="text-[.8rem] text-inkSoft/65 mt-2 leading-relaxed">Peer-led study groups, reading parties, senior university classes — favoured by blues and curious yellows.</p>
+                      <div class="flex gap-2 mt-3 flex-wrap">
+                        <span class="px-2.5 py-1 rounded-full text-[.62rem] font-mono font-bold" style="background:#DAEFFB;color:#1E9BE8">60+ GROUPS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:#FFF4CC"><span class="font-serif font-bold text-sun" style="color:#B88900">WH</span></div>
+                    <div class="flex-1">
+                      <p class="font-serif text-[1.02rem] font-bold text-ink leading-tight">Wing Hong Centre</p>
+                      <p class="text-[.7rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-0.5">Chinese elderly care · Glasgow</p>
+                      <p class="text-[.8rem] text-inkSoft/65 mt-2 leading-relaxed">Cantonese & Mandarin speaking day centre. A flagship partner — featured venues mean extra support with first visits.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card p-4 border-dashed" style="border:1.5px dashed rgba(15,29,58,.15);background:transparent">
+                  <p class="text-[.78rem] text-inkSoft/45 text-center">＋ 12 more partners including Alzheimer Scotland, Paths for All, Luminate…</p>
+                </div>
+              </div>
+
+              <!-- How matching works -->
+              <div class="mt-6 p-5 rounded-2xl" style="background:#0F1D3A;color:#FFF5E4">
+                <p class="text-[.62rem] font-mono uppercase tracking-widest mb-2" style="color:#FF6B4A">// how matching works</p>
+                <p class="font-serif text-[1.05rem] font-bold leading-snug mb-3">Three signals, one match.</p>
+                <div class="space-y-2.5 text-[.8rem] leading-relaxed" style="color:rgba(255,245,228,.75)">
+                  <div class="flex gap-2"><span class="text-coral font-bold">1</span><span><strong class="text-cream">Your colour.</strong> Yellows find social settings, blues find quieter study groups.</span></div>
+                  <div class="flex gap-2"><span class="text-coral font-bold">2</span><span><strong class="text-cream">The community mix.</strong> We show you venues where your complement is already present.</span></div>
+                  <div class="flex gap-2"><span class="text-coral font-bold">3</span><span><strong class="text-cream">Distance & access.</strong> Transport, language, step-free — surfaced upfront.</span></div>
+                </div>
+              </div>
+
+              <div style="height:100px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOME (default) -->
+      <div class="screen" id="s-home">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="px-6 pt-14 pb-4 relative">
+              <svg class="blob" style="top:20px;right:-20px;width:120px" viewBox="0 0 100 100"><path d="M30 20 Q 10 40, 20 70 Q 40 90, 70 80 Q 95 65, 85 35 Q 70 10, 40 15 Z" fill="#1EB5A6" opacity=".12"/></svg>
+              <div class="flex justify-between items-start relative z-10 mb-5">
+                <div>
+                  <p class="text-inkSoft/45 text-xs font-medium font-mono">// TUE · MAR 5</p>
+                  <h2 class="font-serif text-[1.5rem] text-ink font-bold leading-tight mt-1">Morning,<br><span id="hGreet">friend</span>.</h2>
+                </div>
+                <div class="w-11 h-11 rounded-2xl bg-white border border-ink/5 flex items-center justify-center cursor-pointer" onclick="goTo('s-profile')" id="hAvatar">
+                  <img src="app-assets/char-yellow.png" class="char" style="width:30px" id="hAvatarImg">
+                </div>
+              </div>
+
+              <!-- Today's colour prompt -->
+              <div class="card p-5 mb-5 relative overflow-hidden" id="hMoodCard">
+                <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-2">// daily check-in</p>
+                <p class="font-serif text-[1.1rem] text-ink font-bold leading-snug mb-3">Which colour is loudest for you today?</p>
+                <div class="grid grid-cols-4 gap-2">
+                  <button onclick="setMood('red',event)" class="mood-btn flex flex-col items-center gap-1 p-2 rounded-2xl transition-colors" data-m="red"><img src="app-assets/char-red.png" class="char" style="width:40px"><span class="text-[.58rem] text-ink/55 font-bold">Red</span></button>
+                  <button onclick="setMood('yellow',event)" class="mood-btn flex flex-col items-center gap-1 p-2 rounded-2xl transition-colors" data-m="yellow"><img src="app-assets/char-yellow.png" class="char" style="width:40px"><span class="text-[.58rem] text-ink/55 font-bold">Yellow</span></button>
+                  <button onclick="setMood('green',event)" class="mood-btn flex flex-col items-center gap-1 p-2 rounded-2xl transition-colors" data-m="green"><img src="app-assets/char-green.png" class="char" style="width:40px"><span class="text-[.58rem] text-ink/55 font-bold">Green</span></button>
+                  <button onclick="setMood('blue',event)" class="mood-btn flex flex-col items-center gap-1 p-2 rounded-2xl transition-colors" data-m="blue"><img src="app-assets/char-blue.png" class="char" style="width:40px"><span class="text-[.58rem] text-ink/55 font-bold">Blue</span></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- This week's workshops -->
+            <div class="px-6 mb-6">
+              <div class="flex justify-between items-baseline mb-3">
+                <h3 class="font-serif text-[1.15rem] text-ink font-bold">This week nearby</h3>
+                <span class="text-teal text-xs font-bold">See all →</span>
+              </div>
+              <div class="space-y-3">
+                <div class="card p-4 flex gap-4 items-center">
+                  <div class="shrink-0 rounded-2xl" style="width:68px;height:68px;background:#FFE8E5;display:flex;align-items:center;justify-content:center"><img src="app-assets/char-red.png" class="char" style="width:52px"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-[.65rem] font-mono text-coral uppercase tracking-widest">Sat · 2 pm</p>
+                    <p class="font-bold text-ink text-[.95rem] leading-tight mt-0.5">Colorful Time Workshop</p>
+                    <p class="text-inkSoft/45 text-xs mt-1">Wing Hong Centre · 0.8 mi</p>
+                    <div class="flex items-center gap-1 mt-2">
+                      <span class="w-5 h-5 rounded-full border-2 border-white" style="background:#ED1C24"></span>
+                      <span class="w-5 h-5 rounded-full border-2 border-white -ml-2" style="background:#FFD429"></span>
+                      <span class="w-5 h-5 rounded-full border-2 border-white -ml-2" style="background:#2FA84A"></span>
+                      <span class="text-[.62rem] text-inkSoft/35 ml-1.5 font-mono">+6</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card p-4 flex gap-4 items-center">
+                  <div class="shrink-0 rounded-2xl" style="width:68px;height:68px;background:#DAEFFB;display:flex;align-items:center;justify-content:center"><img src="app-assets/char-blue.png" class="char" style="width:52px"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-[.65rem] font-mono text-cool uppercase tracking-widest">Thu · 10 am</p>
+                    <p class="font-bold text-ink text-[.95rem] leading-tight mt-0.5">Reading Party</p>
+                    <p class="text-inkSoft/45 text-xs mt-1">U3A Glasgow · 1.4 mi</p>
+                    <div class="flex items-center gap-1 mt-2">
+                      <span class="w-5 h-5 rounded-full border-2 border-white" style="background:#1E9BE8"></span>
+                      <span class="w-5 h-5 rounded-full border-2 border-white -ml-2" style="background:#2FA84A"></span>
+                      <span class="text-[.62rem] text-inkSoft/35 ml-1.5 font-mono">+4</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card p-4 flex gap-4 items-center">
+                  <div class="shrink-0 rounded-2xl" style="width:68px;height:68px;background:#E1F0D9;display:flex;align-items:center;justify-content:center"><img src="app-assets/char-green.png" class="char" style="width:52px"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-[.65rem] font-mono text-earth uppercase tracking-widest">Wed · 11 am</p>
+                    <p class="font-bold text-ink text-[.95rem] leading-tight mt-0.5">Community Garden</p>
+                    <p class="text-inkSoft/45 text-xs mt-1">Garnethill · 0.5 mi</p>
+                    <div class="flex items-center gap-1 mt-2">
+                      <span class="w-5 h-5 rounded-full border-2 border-white" style="background:#2FA84A"></span>
+                      <span class="w-5 h-5 rounded-full border-2 border-white -ml-2" style="background:#FFD429"></span>
+                      <span class="w-5 h-5 rounded-full border-2 border-white -ml-2" style="background:#1EB5A6"></span>
+                      <span class="text-[.62rem] text-inkSoft/35 ml-1.5 font-mono">+8</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Complement nudge -->
+            <div class="px-6 mb-6">
+              <h3 class="font-serif text-[1.15rem] text-ink font-bold mb-3">Meet your complement</h3>
+              <div class="card p-5 relative overflow-hidden">
+                <svg class="blob" style="top:-20px;right:-20px;width:90px" viewBox="0 0 100 100"><path d="M30 20 Q 10 40, 20 70 Q 40 90, 70 80 Q 95 65, 85 35 Q 70 10, 40 15 Z" fill="#FF6B4A" opacity=".1"/></svg>
+                <div class="flex items-center gap-4 mb-3 relative z-10">
+                  <img src="app-assets/char-green.png" class="char" style="width:56px" id="cmpOther">
+                  <div class="flex-1">
+                    <p class="font-bold text-ink text-[.95rem]">Margaret, 68</p>
+                    <p class="text-[.7rem] text-inkSoft/45 font-mono" id="cmpOtherType">EARTH GREEN · SUPPORTER</p>
+                  </div>
+                </div>
+                <p class="text-[.82rem] text-inkSoft/65 leading-relaxed relative z-10 mb-4">"I really enjoy cycling and would love to have someone join me."</p>
+                <div class="flex gap-2 relative z-10">
+                  <button class="flex-1 py-2.5 rounded-xl bg-ink text-white text-xs font-bold">Say hi</button>
+                  <button class="flex-1 py-2.5 rounded-xl bg-white border border-ink/10 text-ink text-xs font-bold">See more</button>
+                </div>
+              </div>
+            </div>
+
+            <div style="height:80px"></div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab-item active" onclick="goTo('s-home')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div><span>Home</span></div>
+            <div class="tab-item" onclick="goTo('s-ti')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div><span>Test</span></div>
+            <div class="tab-item" onclick="goTo('s-act')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5L8 13 4 9l5.5-1z"/></svg></div><span>Activities</span></div>
+            <div class="tab-item" onclick="goTo('s-journal')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 4h12a2 2 0 012 2v14l-8-4-8 4V6a2 2 0 012-2z"/></svg></div><span>Journal</span></div>
+            <div class="tab-item" onclick="goTo('s-profile')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><span>You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOURNAL -->
+      <div class="screen" id="s-journal">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="px-6 pt-14 pb-2">
+              <p class="text-[.65rem] font-mono text-coral uppercase tracking-widest mb-2">// your colour story</p>
+              <h2 class="font-serif text-[1.5rem] text-ink font-bold leading-tight">This month<br/>in colour</h2>
+            </div>
+
+            <!-- Week calendar -->
+            <div class="px-6 mt-5 mb-6">
+              <div class="card p-5">
+                <p class="text-[.65rem] font-mono text-inkSoft/40 uppercase tracking-widest mb-3">// march · week 1</p>
+                <div class="grid grid-cols-7 gap-2">
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">MON</p><div class="w-8 h-8 mx-auto mt-1 rounded-full" style="background:#FFD429"></div></div>
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">TUE</p><div class="w-8 h-8 mx-auto mt-1 rounded-full" style="background:#2FA84A"></div></div>
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">WED</p><div class="w-8 h-8 mx-auto mt-1 rounded-full" style="background:#FFD429"></div></div>
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">THU</p><div class="w-8 h-8 mx-auto mt-1 rounded-full" style="background:#1E9BE8"></div></div>
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">FRI</p><div class="w-8 h-8 mx-auto mt-1 rounded-full" style="background:#ED1C24"></div></div>
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">SAT</p><div class="w-8 h-8 mx-auto mt-1 rounded-full" style="background:#FFD429"></div></div>
+                  <div class="text-center"><p class="text-[.6rem] text-inkSoft/40 font-mono">SUN</p><div class="w-8 h-8 mx-auto mt-1 rounded-full border-2 border-dashed border-ink/15"></div></div>
+                </div>
+                <p class="text-[.78rem] text-inkSoft/60 mt-4 leading-relaxed">Your week leaned <strong class="text-sun">yellow</strong> — sociable and curious. Blue turned up on Thursday after your reading party.</p>
+              </div>
+            </div>
+
+            <!-- Entries -->
+            <div class="px-6 mb-6">
+              <div class="flex items-baseline justify-between mb-3">
+                <h3 class="font-serif text-[1.1rem] text-ink font-bold">Notes to yourself</h3>
+                <button class="text-teal text-xs font-bold">＋ New</button>
+              </div>
+              <div class="space-y-3">
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-9 h-9 rounded-full shrink-0" style="background:#FFD429"></div>
+                    <div class="flex-1">
+                      <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest">TUE · 5 MAR</p>
+                      <p class="text-[.88rem] text-ink leading-relaxed mt-1">Brought Margaret a flower. She laughed more today than I expected — yellow day I suppose.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-9 h-9 rounded-full shrink-0" style="background:#1E9BE8"></div>
+                    <div class="flex-1">
+                      <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest">THU · 7 MAR</p>
+                      <p class="text-[.88rem] text-ink leading-relaxed mt-1">Reading party at U3A. I was quieter than usual — observer mode. Loved it.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card p-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-9 h-9 rounded-full shrink-0" style="background:#ED1C24"></div>
+                    <div class="flex-1">
+                      <p class="text-[.62rem] font-mono text-inkSoft/40 uppercase tracking-widest">FRI · 8 MAR</p>
+                      <p class="text-[.88rem] text-ink leading-relaxed mt-1">Organised the garden rota. Feeling directive today, red in full force.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="height:80px"></div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab-item" onclick="goTo('s-home')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div><span>Home</span></div>
+            <div class="tab-item" onclick="goTo('s-ti')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div><span>Test</span></div>
+            <div class="tab-item" onclick="goTo('s-act')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5L8 13 4 9l5.5-1z"/></svg></div><span>Activities</span></div>
+            <div class="tab-item active" onclick="goTo('s-journal')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 4h12a2 2 0 012 2v14l-8-4-8 4V6a2 2 0 012-2z"/></svg></div><span>Journal</span></div>
+            <div class="tab-item" onclick="goTo('s-profile')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><span>You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE -->
+      <div class="screen" id="s-profile">
+        <div class="flex-1 flex flex-col bg-cream">
+          <div class="flex-1 overflow-y-auto">
+            <div class="px-6 pt-14 pb-6 text-center relative">
+              <svg class="blob" style="top:30px;left:50%;transform:translateX(-50%);width:180px;height:180px" viewBox="0 0 200 200"><path d="M50 40 Q 20 80, 40 130 Q 80 180, 140 160 Q 200 130, 180 70 Q 150 10, 90 20 Q 60 25, 50 40 Z" fill="#FFD429" opacity=".25" id="pBlob"/></svg>
+              <div class="relative z-10 mb-3">
+                <img src="app-assets/char-yellow.png" class="char mx-auto a-brth" style="width:120px" id="pChar">
+              </div>
+              <h2 class="font-serif text-[1.4rem] text-ink font-bold relative z-10">Mei Lin, 64</h2>
+              <p class="text-[.7rem] font-mono text-inkSoft/50 uppercase tracking-widest relative z-10 mt-1" id="pType">SUNSHINE YELLOW · INSPIRER</p>
+              <div class="relative z-10 flex justify-center gap-2 mt-3 flex-wrap">
+                <span class="px-3 py-1 bg-white border border-ink/5 rounded-full text-[.68rem] font-bold text-ink">Wing Hong member</span>
+                <span class="px-3 py-1 bg-white border border-ink/5 rounded-full text-[.68rem] font-bold text-ink">3 workshops</span>
+              </div>
+            </div>
+
+            <!-- Stats row -->
+            <div class="px-6 mb-6 grid grid-cols-3 gap-3">
+              <div class="card p-3 text-center">
+                <p class="font-serif text-[1.6rem] text-ink font-bold leading-none">12</p>
+                <p class="text-[.62rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-1">check-ins</p>
+              </div>
+              <div class="card p-3 text-center">
+                <p class="font-serif text-[1.6rem] text-ink font-bold leading-none">3</p>
+                <p class="text-[.62rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-1">friends</p>
+              </div>
+              <div class="card p-3 text-center">
+                <p class="font-serif text-[1.6rem] text-ink font-bold leading-none">8</p>
+                <p class="text-[.62rem] font-mono text-inkSoft/45 uppercase tracking-widest mt-1">activities</p>
+              </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="px-6 space-y-2.5 mb-8">
+              <div class="card p-4 flex items-center gap-4 cursor-pointer">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:#FFE8E5"><img src="app-assets/char-red.png" class="char" style="width:32px"></span>
+                <div class="flex-1"><p class="text-[.92rem] font-bold text-ink">My colour profile</p><p class="text-xs text-inkSoft/40">Full Insights report</p></div>
+                <span class="text-ink/15 font-bold">›</span>
+              </div>
+              <div class="card p-4 flex items-center gap-4 cursor-pointer">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:#E1F0D9"><img src="app-assets/char-green.png" class="char" style="width:32px"></span>
+                <div class="flex-1"><p class="text-[.92rem] font-bold text-ink">Colour Life Guide</p><p class="text-xs text-inkSoft/40">Activity inspiration book</p></div>
+                <span class="text-ink/15 font-bold">›</span>
+              </div>
+              <div class="card p-4 flex items-center gap-4 cursor-pointer">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center bg-sun/20 text-lg">🗓</span>
+                <div class="flex-1"><p class="text-[.92rem] font-bold text-ink">My events</p><p class="text-xs text-inkSoft/40">Workshops I'm attending</p></div>
+                <span class="text-ink/15 font-bold">›</span>
+              </div>
+              <div class="card p-4 flex items-center gap-4 cursor-pointer">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center bg-ink/5 text-lg">⚙︎</span>
+                <div class="flex-1"><p class="text-[.92rem] font-bold text-ink">Settings</p><p class="text-xs text-inkSoft/40">Language · notifications · text size</p></div>
+                <span class="text-ink/15 font-bold">›</span>
+              </div>
+            </div>
+
+            <p class="text-center text-[.62rem] text-inkSoft/25 mb-6 font-mono">colorful&nbsp;time&nbsp;·&nbsp;v1.0&nbsp;·&nbsp;powered&nbsp;by&nbsp;insights&nbsp;discovery</p>
+            <div style="height:80px"></div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab-item" onclick="goTo('s-home')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div><span>Home</span></div>
+            <div class="tab-item" onclick="goTo('s-ti')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div><span>Test</span></div>
+            <div class="tab-item" onclick="goTo('s-act')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5L8 13 4 9l5.5-1z"/></svg></div><span>Activities</span></div>
+            <div class="tab-item" onclick="goTo('s-journal')"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 4h12a2 2 0 012 2v14l-8-4-8 4V6a2 2 0 012-2z"/></svg></div><span>Journal</span></div>
+            <div class="tab-item active"><div class="tab-ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="9" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><span>You</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<script src="colorful-time-phone.js"></script>
+</body>
+</html>

@@ -1,9 +1,15 @@
 ::selection{background:#FF6B4A;color:#fff}
 *{-webkit-tap-highlight-color:transparent}
-body{background:transparent;font-family:'DM Sans',sans-serif;color:#E8E4DB;margin:0;padding:0;display:flex;align-items:center;justify-content:center;min-height:100vh}
-/* Phone */
+body{background:transparent;font-family:'DM Sans',sans-serif;color:#E8E4DB;margin:0;padding:0;display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden}
+/* Phone — standalone (full browser window) */
 .phone{width:390px;height:844px;background:#FFF5E4;border-radius:48px;overflow:hidden;position:relative;box-shadow:0 0 0 10px #0a0a1a,0 0 0 12px #2a2a3e,0 50px 80px rgba(0,0,0,.6);flex-shrink:0}
 .phone::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:120px;height:32px;background:#0a0a1a;border-radius:24px;z-index:100}
+/* Phone — inside iframe (viewport shorter than phone) */
+@media (max-height:860px){
+  body{height:100vh;margin:0;padding:0}
+  .phone{width:auto;height:calc(100vh - 24px);aspect-ratio:390/844;margin:12px auto;box-shadow:0 0 0 8px #0a0a1a,0 0 0 10px #2a2a3e,0 30px 50px rgba(0,0,0,.45);border-radius:36px}
+  .phone::before{width:90px;height:24px;top:6px;border-radius:18px}
+}
 .screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;transition:opacity .35s,transform .35s;opacity:0;transform:translateX(30px);pointer-events:none;scrollbar-width:none;display:flex;flex-direction:column}
 .screen::-webkit-scrollbar{display:none}
 .screen.active{opacity:1;transform:translateX(0);pointer-events:auto}
