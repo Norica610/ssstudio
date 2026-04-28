@@ -18,8 +18,8 @@
         ink: "#1a1a1a"
       },
       fontFamily: {
-        serif: ['"DM Serif Display"', 'serif'],
-        sans: ['"DM Sans"', 'sans-serif'],
+        display: ["Space Grotesk", "sans-serif"],
+        serif: ["Lora", "serif"]
       },
     }
   }
@@ -27,9 +27,31 @@
 <style>
   .reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.visible { opacity:1; transform:none; }
-  /* image caption */
   .img-caption { display:flex; align-items:center; gap:8px; margin-top:12px; font-size:10px; text-transform:uppercase; letter-spacing:.2em; font-weight:600; opacity:.35; }
   .img-caption span { display:inline-block; width:24px; height:1px; background:currentColor; }
+  /* Hi-fi screenshot placeholder — clearly-marked, replace by swapping the <img src> in. */
+  .ui-placeholder {
+    position:relative;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, rgba(53,158,255,.04), rgba(26,26,26,.04));
+    border: 1.5px dashed rgba(53,158,255,.35);
+    border-radius: 12px;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .ui-placeholder .label {
+    text-align:center;
+    color: rgba(26,26,26,.45);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:600;
+    line-height:1.6;
+    padding: 24px;
+    max-width: 440px;
+  }
+  .dark .ui-placeholder .label { color: rgba(248,247,245,.5); }
+  .ui-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
 </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-ink dark:text-background-light font-display transition-colors duration-300">
@@ -39,19 +61,16 @@
   <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
     <a href="/index.html" class="text-2xl font-black tracking-tighter uppercase hover:text-primary transition-colors">SStudio.</a>
     <nav class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
-        <a class="hover:text-primary transition-colors" href="/index.html">Work</a>
-        <a class="hover:text-primary transition-colors" href="/about.html">About</a>
+      <a class="hover:text-primary transition-colors" href="/index.html">Work</a>
+      <a class="hover:text-primary transition-colors" href="/about.html">About</a>
     </nav>
   </div>
 </header>
 
 <main class="max-w-[1440px] mx-auto">
 
-<!-- ══════════════════════════════════════════════════
-  01 — OVERALL STRATEGY
-══════════════════════════════════════════════════ -->
-<section id="overall"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-24">
+<!-- 01 — OVERALL STRATEGY -->
+<section id="overall" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-24">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
       01 — Overall Strategy
@@ -70,20 +89,21 @@
       <span class="font-semibold text-ink dark:text-background-light">trust is the product.</span>
     </p>
 
-    <!-- ↓ PDF Page 3: Homepage hero screenshot -->
-    <!-- Export PDF p.3 as image → save as photo/screen-homepage.png -->
-    <div class="reveal bg-[rgb(217,217,217)]rounded-2xl overflow-hidden p-4 border border-ink/10 dark:border-background-light/10">
-      <img src="asset/4ppl.png" alt="Clinical Recruitment portal homepage" class="w-1/2 h-auto mx-auto"/>
-      <div class="px-6 py-4 img-caption"><span></span>Patient-facing portal — Illustration</div>
+    <div class="reveal bg-white dark:bg-white/5 rounded-2xl overflow-hidden p-2 border border-ink/10 dark:border-background-light/10">
+      <img src="asset/4ppl.png" alt="Clinical Recruitment portal homepage illustration" class="w-3/4 h-auto mx-auto"/>
+      <div class="px-4 py-3 img-caption"><span></span>Patient-facing portal — concept illustration</div>
     </div>
+      <div class="reveal text-center mt-6">
+    <a href="#demo" class="inline-flex items-center gap-2 px-6 py-3  bg-[#173359] dark:bg-background-light text-background-light dark:text-ink text-xs font-semibold tracking-[0.2em] uppercase hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors rounded-full">
+      <span class="material-symbols-outlined text-base">arrow_downward</span>
+      Try the live prototype
+  </a>
+</div>
   </div>
-</section
+</section>
 
-<!-- ══════════════════════════════════════════════════
-  02 — WHAT DID I DO?
-══════════════════════════════════════════════════ -->
-<section id="role"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-16">
+<!-- 02 — WHAT DID I DO? -->
+<section id="role" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-16">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
       02 — What did I do?
@@ -97,7 +117,7 @@
       </div>
       <div>
         <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/40 dark:text-background-light/40 mb-3">Collaborators</p>
-        <p class="text-base leading-relaxed opacity-80">Clinic physicians<br/>Product Team<br/>12+ retail stakeholders</p>
+        <p class="text-base leading-relaxed opacity-80">Clinic physicians<br/>Product Team<br/>12+ clinical stakeholders</p>
       </div>
       <div>
         <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/40 dark:text-background-light/40 mb-3">Scope</p>
@@ -107,11 +127,8 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-  03 — THE PROBLEM
-══════════════════════════════════════════════════ -->
-<section id="problem"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+<!-- 03 — THE PROBLEM -->
+<section id="problem" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
       03 — The Problem
@@ -120,7 +137,6 @@
   <div class="md:col-span-9 space-y-12">
 
     <div class="flex flex-col md:flex-row items-start gap-12">
-      
       <div class="flex-1">
         <h3 class="text-3xl font-bold tracking-tighter italic mb-6">Three parties, three deadlines, zero alignment</h3>
         <div class="grid grid-cols-1 gap-y-4 text-base opacity-70 max-w-xl">
@@ -133,16 +149,14 @@
 
       <div class="w-full md:w-1/3 shrink-0">
         <div class="bg-white dark:bg-white/5 rounded-2xl p-4 border border-ink/10 dark:border-background-light/10">
-          <img src="asset/circle worries.png" alt="3 sides" class="w-full h-auto"/>
+          <img src="asset/circle worries.png" alt="Three-stakeholder tension diagram" class="w-full h-auto"/>
           <div class="img-caption mt-2 text-[10px] uppercase tracking-widest opacity-40">
-            Trust by channel — survey n=200+
+            Stakeholder tension — three deadlines mapped
           </div>
         </div>
       </div>
-
     </div>
 
-    <!-- 3 pain-point cards -->
     <div class="reveal grid grid-cols-1 md:grid-cols-3 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
       <div class="p-8 relative">
         <span class="absolute top-6 right-6 text-6xl font-bold text-ink/5 dark:text-background-light/5 leading-none select-none">01</span>
@@ -164,15 +178,11 @@
       </div>
     </div>
 
-
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-  04 — RESEARCH & INSIGHTS
-══════════════════════════════════════════════════ -->
-<section id="research"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+<!-- 04 — RESEARCH & INSIGHTS -->
+<section id="research" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
       04 — Research &amp; Insights
@@ -188,17 +198,14 @@
         </p>
         <blockquote class="mt-6 border-l-4 border-primary pl-5 font-serif text-lg opacity-80 leading-relaxed">
           "A portal that carries a specialist's clarity—not a consent form's anxiety—can inherit the trust a clinic visit already built."
-
         </blockquote>
       </div>
-      <!-- ↓ photo/chart no.png — already in your repo -->
       <div class="bg-white dark:bg-white/5 rounded-2xl p-4 border border-ink/10 dark:border-background-light/10">
         <img src="asset/chart no.png" alt="Trust by channel bar chart" class="w-full h-auto"/>
         <div class="img-caption"><span></span>Trust by channel — survey n=200+</div>
       </div>
     </div>
 
-    <!-- stat bar -->
     <div class="reveal grid grid-cols-2 md:grid-cols-4 border border-ink/10 dark:border-background-light/10 divide-y-2 md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
       <div class="p-8">
         <p class="text-5xl font-bold tracking-tighter mb-2">68.9%</p>
@@ -221,11 +228,8 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-  05 — DESIGN DECISIONS
-══════════════════════════════════════════════════ -->
-<section id="design"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20 bg-zinc-50/50 dark:bg-white/[0.02]">
+<!-- 05 — DESIGN DECISIONS -->
+<section id="design" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20 bg-zinc-50/50 dark:bg-white/[0.02]">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
       05 — Design Decisions
@@ -233,63 +237,56 @@
   </div>
   <div class="md:col-span-9 space-y-20">
 
-    <!-- ── DECISION 1: LAYERED DISCLOSURE ── -->
+    <!-- DECISION 1 -->
     <div class="reveal space-y-6">
-      <!-- finding + response -->
       <div class="grid grid-cols-1 md:grid-cols-2 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
         <div class="p-8 bg-ink/[0.03] dark:bg-background-light/[0.03]">
-          <p class="text-[10px] uppercase tracking-[0.25em] font-bold opacity-40 mb-3">Research Finding — Before</p>
+          <p class="text-[6px] uppercase tracking-[0.25em]  opacity-40 mb-3">Research Finding — Before</p>
           <p class="text-base leading-relaxed"><span class="font-semibold">68.9% trust specialist communication. 0% of existing sites replicate this.</span> Medical terminology without translation creates cognitive load that reads as threat.</p>
         </div>
-        <div class="p-8 bg-ink dark:bg-background-light dark:text-ink" style="background-color: rgb(217, 217, 217);">
+        <div class="p-8 bg-zinc-200 dark:bg-zinc-800 text-ink dark:text-background-light">
           <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-3">Design Response ✓</p>
           <p class="text-base leading-relaxed"><span class="font-semibold">Layered disclosure:</span> plain language first, clinical detail on demand—three tiers per page. Visual metaphors carry meaning the words can't.<br/><br/><span class="opacity-60 text-sm">Rejected alternative: standalone glossary page. Users don't navigate to reference pages—they need inline answers.</span></p>
         </div>
       </div>
 
-
-    <!-- ── DECISION 2: QUALIFIED FRICTION ── -->
+    <!-- DECISION 2 -->
     <div class="reveal space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
         <div class="p-8 bg-ink/[0.03] dark:bg-background-light/[0.03]">
-          <p class="text-[10px] uppercase tracking-[0.25em] font-bold opacity-40 mb-3">Research Finding — During</p>
+          <p class="text-[px] uppercase tracking-[0.25em]  opacity-40 mb-3">Research Finding — During</p>
           <p class="text-base leading-relaxed"><span class="font-semibold">The 14-page consent form was the highest drop-off point.</span> The problem wasn't the length—it was the sequence. Risks before context.</p>
         </div>
-        <div class="p-8 bg-ink dark:bg-background-light dark:text-ink" style="background-color: rgb(217, 217, 217);">
-          <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-3">Design Response — Qualified Friction ✓</p>
+        <div class="p-8 bg-zinc-200 dark:bg-zinc-800 text-ink dark:text-background-light">
+          <p class="text-[8px] uppercase tracking-[0.25em] font-bold text-primary mb-3">Design Response — Qualified Friction ✓</p>
           <p class="text-base leading-relaxed">Counter-intuitive: I didn't simplify the flow—I reordered it. Benefits and evidence before risks. Branching eligibility screener that mirrors the specialist's checklist, so patients feel <em>vetted</em>, not trapped.<br/><br/><span class="opacity-60 text-sm">Trade-off: ~15% lower raw sign-up volume. Candidate quality improved—higher proportion passed clinical pre-screening.</span></p>
         </div>
       </div>
 
-    <!-- ── DECISION 3: POST-PROCEDURE ── -->
+    <!-- DECISION 3 -->
     <div class="reveal space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
         <div class="p-8 bg-ink/[0.03] dark:bg-background-light/[0.03]">
           <p class="text-[10px] uppercase tracking-[0.25em] font-bold opacity-40 mb-3">Research Finding — After</p>
           <p class="text-base leading-relaxed"><span class="font-semibold">7/10 patients said their biggest worry wasn't the surgery—it was "what my life looks like afterwards."</span> Post-procedure anxiety was a pre-enrollment blocker.</p>
         </div>
-        <div class="p-8 bg-ink dark:bg-background-light dark:text-ink" style="background-color: rgb(217, 217, 217);">
+        <div class="p-8 bg-zinc-200 dark:bg-zinc-800 text-ink dark:text-background-light">
           <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-3">Design Response ✓</p>
           <p class="text-base leading-relaxed">Made the after-surgery hub publicly visible <em>before</em> sign-up. 90-day lifestyle guide, coordinator contact, follow-up schedule—all accessible to unenrolled patients. Showing what happens next converted the unknown from threat to expectation.</p>
         </div>
       </div>
 
-      <!-- ↓ PDF Page 9: After surgery care — lifestyle icons + BP monitoring
-           Export as: photo/screen-aftercare.png -->
       <div class="bg-white dark:bg-white/5 rounded-2xl p-4 border border-ink/10 dark:border-background-light/10">
         <img src="asset/process.png" alt="After surgery care lifestyle guide" class="w-full h-auto"/>
-        <div class="px-6 py-4 img-caption"><span></span>Visual of the whole medical process</div>
+        <div class="px-6 py-4 img-caption"><span></span>Post-procedure care — visualised end-to-end journey</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-  06 — END-TO-END JOURNEY
-══════════════════════════════════════════════════ -->
-<section id="journey"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+<!-- 06 — END-TO-END JOURNEY -->
+<section id="journey" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
       06 — End-to-End Journey
@@ -297,7 +294,42 @@
   </div>
   <div class="md:col-span-9 space-y-12">
 
-    <!-- journey phases -->
+    <!-- Strategic anchor: the ecosystem map and the three questions that became the design decisions -->
+    <div class="reveal space-y-6 max-w-3xl">
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
+        Three questions, three design decisions.
+      </h3>
+      <p class="text-base text-ink/65 dark:text-background-light/65 leading-relaxed">
+        Mapping the recruitment ecosystem surfaced three strategic gaps, each tied to a specific phase of the patient journey. These weren't picked from a checklist—they came from where the journey actually broke down. Each became one of the design decisions in the previous section.
+      </p>
+    </div>
+
+    <div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 bg-white dark:bg-white/5 rounded-xl p-4 md:p-6 border border-ink/10 dark:border-background-light/10">
+        <img src="asset/ecosystem.png" alt="Service ecosystem map showing the patient recruitment journey from Information Release through Candidates, Eligibility, Consent, Pre and Post Operation Follow Up to Sharing Feedback, with three strategic questions annotated in blue" class="w-full h-auto"/>
+        <div class="img-caption"><span></span>Service ecosystem — annotated with the three open questions that anchored the design</div>
+      </div>
+
+      <ol class="lg:col-span-5 space-y-5">
+        <li class="reveal pl-5 border-l-2 border-primary">
+          <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-2">Question 01 · Awareness</p>
+          <p class="text-base font-semibold leading-snug mb-1">"How do we market it and make people trust it?"</p>
+          <p class="text-sm opacity-60 leading-relaxed">→ Layered disclosure (Decision 1)</p>
+        </li>
+        <li class="reveal pl-5 border-l-2 border-primary">
+          <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-2">Question 02 · Enrollment</p>
+          <p class="text-base font-semibold leading-snug mb-1">"What could we do to guide patients?"</p>
+          <p class="text-sm opacity-60 leading-relaxed">→ Branching eligibility screener &amp; qualified friction (Decision 2)</p>
+        </li>
+        <li class="reveal pl-5 border-l-2 border-primary">
+          <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-2">Question 03 · Post-procedure</p>
+          <p class="text-base font-semibold leading-snug mb-1">"How do we encourage patients to share their experience?"</p>
+          <p class="text-sm opacity-60 leading-relaxed">→ After-surgery hub visible before sign-up (Decision 3)</p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Existing 4-column journey table (Pain × Response) -->
     <div class="reveal grid grid-cols-1 md:grid-cols-4 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
       <div class="p-6">
         <p class="text-[10px] uppercase tracking-[0.25em] font-bold opacity-40 mb-4">Awareness</p>
@@ -329,107 +361,154 @@
       </div>
     </div>
 
-    <!-- stakeholder map + connected community -->
-    <div class="reveal grid grid-cols-1 md:grid-cols-1 gap-6">
-
-      <!-- ↓ photo/process map.png — already in your repo -->
+    <div class="reveal">
       <div class="bg-white dark:bg-white/5 rounded-xl p-6 border border-ink/10 dark:border-background-light/10">
         <img src="asset/process map.png" alt="Service blueprint and stakeholder map" class="w-full h-auto"/>
         <div class="img-caption"><span></span>Service blueprint — stakeholder map</div>
       </div>
-
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-  07 — OUTCOMES
-══════════════════════════════════════════════════ -->
-<section id="outcomes"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+<!-- 07 — VALIDATION & HYPOTHESES -->
+<section id="outcomes" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
-      07 — Outcomes
+      07 — Validation &amp; Hypotheses
     </h2>
   </div>
-  <div class="md:col-span-9 space-y-12">
+  <div class="md:col-span-9 space-y-10">
 
-    <div class="reveal grid grid-cols-1 md:grid-cols-3 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
-      <div class="p-8 bg-ink dark:bg-background-light dark:text-ink" style="background-color: rgb(217, 217, 217);">
-        <p class="text-5xl font-bold tracking-tighter mb-3">↑</p>
-        <p class="text-sm font-semibold mb-2">Patient engagement</p>
-        <p class="text-xs opacity-60 leading-relaxed">Significant increase in target population's willingness to engage with clinical research vs. baseline.</p>
+    <p class="text-base leading-relaxed opacity-70 max-w-2xl">
+      This portal is a working prototype, not a deployed product. So I want to be precise about what's <span class="font-semibold text-ink dark:text-background-light">established</span> and what's still <span class="font-semibold text-ink dark:text-background-light">to be tested</span>—because in clinical contexts, the difference matters.
+    </p>
+
+    <!-- ESTABLISHED -->
+    <div class="reveal space-y-4">
+      <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary">Established · Evidence base</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
+        <div class="p-8">
+          <p class="text-5xl font-bold tracking-tighter mb-3">30pt</p>
+          <p class="text-sm font-semibold mb-2">Trust gap to close</p>
+          <p class="text-xs opacity-60 leading-relaxed">Measured across 200+ patients in primary research—the gap between specialist trust (68.9%) and digital-channel trust (~39%).</p>
+        </div>
+        <div class="p-8">
+          <p class="text-5xl font-bold tracking-tighter mb-3">−26.4</p>
+          <p class="text-sm font-semibold mb-2">mmHg at 36 months</p>
+          <p class="text-xs opacity-60 leading-relaxed">Clinical efficacy data from peer-reviewed renal denervation trials—surfaced inside the portal to give patients real evidence to weigh.</p>
+        </div>
+        <div class="p-8">
+          <p class="text-5xl font-bold tracking-tighter mb-3">8 min</p>
+          <p class="text-sm font-semibold mb-2">Physician window</p>
+          <p class="text-xs opacity-60 leading-relaxed">The constraint observed in clinic. The portal exists to extend the conversation past the 8-minute slot, not replace it.</p>
+        </div>
       </div>
-      <div class="p-8">
-        <p class="text-5xl font-bold tracking-tighter mb-3">−26.4</p>
-        <p class="text-sm font-semibold mb-2">mmHg at 36 months</p>
-        <p class="text-xs opacity-50 leading-relaxed">Clinical outcome data surfaced in portal to build pre-enrollment confidence.</p>
-      </div>
-      <div class="p-8">
-        <p class="text-5xl font-bold tracking-tighter mb-3">Higher</p>
-        <p class="text-sm font-semibold mb-2">Candidate quality</p>
-        <p class="text-xs opacity-50 leading-relaxed">Portal applicants passed clinical pre-screening at higher rates vs. cold referrals—improved self-selection through the eligibility flow.</p>
+    </div>
+
+    <!-- HYPOTHESES -->
+    <div class="reveal space-y-4">
+      <p class="text-[10px] uppercase tracking-[0.25em] font-bold opacity-50">Hypotheses · To be validated post-deployment</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 border border-ink/10 dark:border-background-light/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 dark:divide-background-light/10">
+        <div class="p-8">
+          <p class="text-base font-semibold mb-2">Qualified friction improves candidate quality</p>
+          <p class="text-xs opacity-60 leading-relaxed">The branching screener is expected to lower raw sign-up volume in exchange for higher pre-screening pass rates. Worth testing because clinical pre-screening time is the scarcer resource, not portal traffic.</p>
+        </div>
+        <div class="p-8">
+          <p class="text-base font-semibold mb-2">Honesty disclosure outperforms reassurance</p>
+          <p class="text-xs opacity-60 leading-relaxed">Publishing the "10–20% non-responder" figure was the most contested internal call. The hypothesis: in high-stakes medical contexts, candour earns trust faster than optimism. To be measured against drop-off at the disclosure screen.</p>
+        </div>
       </div>
     </div>
 
     <p class="text-sm opacity-50 leading-relaxed max-w-2xl">
-      Publishing the "10–20% of patients don't respond" disclosure was internally controversial. It didn't reduce sign-ups. Patients read it as a credibility signal—validating the core thesis: in a high-stakes medical context, <span class="font-semibold text-ink/70 dark:text-background-light/70">honesty outperforms optimism as a conversion strategy.</span>
+      The shift from <em>Outcomes</em> to <em>Validation &amp; Hypotheses</em> is itself the point: this work is grounded in measured research and articulated bets, not in claimed metrics from a project that hasn't shipped.
     </p>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-  08 — DEMO
-══════════════════════════════════════════════════ -->
-<section id="demo"
-  class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+<!--
+  08 — REFLECTION
+  Anchored in concepts established earlier: qualified friction, the −15% trade-off, "trust is the product" thesis.
+-->
+<section id="reflection" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
   <div class="md:col-span-3 lg:col-span-2">
     <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
-      08 — Demo
+      08 — Reflection
     </h2>
   </div>
-  <div class="md:col-span-9">
-    <iframe
-      src="https://urban-secrets-unfold.lovable.app"
-      width="100%" height="800px"
-      class="border border-ink/10 dark:border-background-light/10 rounded-xl"
-      title="Clinical Recruitment Portal — Live Prototype">
-    </iframe>
+  <div class="md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="reveal p-8 border-l-4 border-primary bg-white dark:bg-white/5 rounded-r-2xl">
+      <p class="text-[10px] uppercase tracking-[0.25em] font-bold text-primary mb-4">What worked</p>
+      <p class="text-base leading-relaxed opacity-80">
+      "Qualified friction" sounds counter-intuitive. Why would you make sign-up harder? But the trade-off held up: lower raw volume in exchange for a candidate pool that mirrors what the clinic actually needs. This was the first time I felt clearly that design isn't about optimising every metric. It's about optimising the right one. A low-quality sign-up costs a physician thirty minutes of pre-screening; portal traffic is cheap, but their attention isn't.
+      </p>
+    </div>
+    <div class="reveal p-8 border-l-4 border-ink/30 dark:border-background-light/30 bg-white dark:bg-white/5 rounded-r-2xl">
+      <p class="text-[10px] uppercase tracking-[0.25em] font-bold opacity-50 mb-4">What I'd change</p>
+      <p class="text-base leading-relaxed opacity-80">
+      I treated trust as something a portal could build through clearer language and better disclosure patterns. In hindsight, the real trust lives outside the portal: in the physician's eight-minute conversation, in what patients tell each other in waiting rooms and group chats. The portal can amplify that trust, or break it. It isn't the source. If I were starting again, I'd map how trust flows through a patient's network before deciding what the portal should carry.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 09 — LIVE PROTOTYPE -->
+<section id="demo" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-12 border-b border-ink/10 dark:border-background-light/10 px-6 md:px-12 py-20">
+  <div class="md:col-span-3 lg:col-span-2">
+    <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/40 dark:text-background-light/40 mb-8 md:mb-0">
+      09 — Live Prototype
+    </h2>
+  </div>
+  <div class="md:col-span-9 space-y-10">
+
+    <div class="reveal space-y-6 max-w-3xl">
+      <h3 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+        Where the research becomes a product.
+      </h3>
+      <p class="text-base text-ink/70 dark:text-background-light/70 leading-relaxed">
+        Every design decision in the previous sections—layered disclosure, the eligibility self-check, the dual timeline, the honesty principle—is concretised here. This isn't a static mockup; it's a working patient-facing portal you can navigate, test, and break.
+      </p>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.2em] font-semibold opacity-60">
+        <span>① Hero · 3-min commitment framing</span>
+        <span>② Condition explainer</span>
+        <span>③ 6-step procedure walkthrough</span>
+        <span>④ Eligibility self-check (4Q)</span>
+        <span>⑤ Trial timeline · Week 1 → Month 6+</span>
+        <span>⑥ Patient testimonials</span>
+        <span>⑦ Low-pressure next steps</span>
+        <span>⑧ Illustration design</span>
+
+      </div>
+      <a href="https://urban-secrets-unfold.lovable.app" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 bg-ink dark:bg-background-light text-background-light dark:text-ink text-xs font-semibold tracking-[0.2em] uppercase hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors rounded">
+        Open in full screen
+        <span class="material-symbols-outlined text-base">arrow_outward</span>
+      </a>
+    </div>
+
+    <div class="reveal relative">
+      <iframe src="https://urban-secrets-unfold.lovable.app"
+              width="100%" height="800"
+              loading="lazy"
+              class="border border-ink/10 dark:border-background-light/10 rounded-xl bg-white"
+              title="Clinical Recruitment Portal — Live Prototype"></iframe>
+      <p class="text-[10px] uppercase tracking-[0.2em] font-semibold opacity-30 mt-3">
+        Interactive iframe · Final vision have copyright belong to microport company · Part of the content shown here
+      </p>
+    </div>
+
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
- 
-<footer class="p-6 md:px-12 py-16 flex flex-col md:flex-row justify-between items-start md:items-end">
-    <div>
-    <p class="text-6xl font-black tracking-tighter uppercase">SStudio.</p>
-    <p class="font-serif italic opacity-60 max-w-xs">Made with passion and love.</p>
-    </div>
-
-    <footer class="px-8 md:px-16 py-16 flex flex-col md:flex-row justify-between items-end border-t border-charcoal/5 dark:border-white/5">
-        <div class="flex flex-col gap-4 mb-12 md:mb-0">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] opacity-40">Connect</p>
-            <div class="flex flex-col gap-2">
-            <a class="text-2xl font-medium hover:text-primary transition-colors underline underline-offset-8 decoration-1 decoration-charcoal/20" href="#">Instagram</a>
-            <a class="text-2xl font-medium hover:text-primary transition-colors underline underline-offset-8 decoration-1 decoration-charcoal/20" href="https://www.linkedin.com/in/shuang-zhao-7a785a247/">LinkedIn</a>
-            <a class="text-2xl font-medium hover:text-primary transition-colors underline underline-offset-8 decoration-1 decoration-charcoal/20" href="#">Behance</a>
-            </div>
-        </div>
-        <div class="flex flex-col items-end text-right">
-            <div class="flex gap-4 mb-6">
-            <div class="size-10 rounded-full border border-charcoal/10 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all cursor-pointer">
-            <span class="material-symbols-outlined text-sm">arrow_upward</span>
-        </div>
-        </div>
-        <div>
-        <p class="text-sm font-medium">© 2026 S-Studio — Global</p>
+<!-- FOOTER (rebuilt — single footer, all tags closed, no nesting) -->
+    <footer class="px-8 md:px-16 py-16 flex flex-col md:flex-row justify-between items-end border-t border-ink/10 dark:border-background-light/10">
+        <p class="text-sm font-medium">© 2026 SStudio </p>
         <p class="text-xs opacity-40 uppercase tracking-widest mt-1">All rights reserved</p>
-        </div>
-</footer>
+    </footer>
 
 <script>
   const obs = new IntersectionObserver(

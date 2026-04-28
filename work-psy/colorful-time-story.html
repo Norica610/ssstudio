@@ -34,7 +34,6 @@ tailwind.config = {
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
   @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
   @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
-  @keyframes spin-in { from{transform:rotate(-180deg);opacity:0} to{transform:rotate(0);opacity:1} }
   .anim-fadeup { animation:fadeUp .8s ease-out both }
   .anim-fadeup-1 { animation:fadeUp .8s ease-out .1s both }
   .anim-fadeup-2 { animation:fadeUp .8s ease-out .2s both }
@@ -45,30 +44,19 @@ tailwind.config = {
   .float-bg-rev { animation:float 10s ease-in-out infinite reverse }
   .img-slot { position:relative; overflow:hidden; background:linear-gradient(135deg,rgba(21,34,89,.04),rgba(242,124,32,.04)); display:flex; align-items:center; justify-content:center }
   .img-slot img { width:100%; height:100%; object-fit:cover; display:block }
-  .img-slot .ph { color:rgba(21,34,89,.22); font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; text-align:center; padding:12px; line-height:1.5 }
-  .quiz-option { transition:all .3s }
-  .quiz-option:hover { border-color:rgba(255,255,255,.3); background:rgba(255,255,255,.08) }
-  .quiz-option.selected { border-color:#F27C20; background:rgba(242,124,32,.12) }
   .wheel-svg { transition:transform .6s cubic-bezier(.34,1.56,.64,1) }
   .wheel-svg:hover { transform:rotate(15deg) }
-  .ps { transition:all .4s }
-  .ps:hover { background:#152259; color:#fff }
-  .ps:hover .pn { color:#F27C20 }
-  .ps:hover p { color:rgba(255,255,255,.7) }
-  .ps:hover h4 { color:#fff }
+  .icon-dot { width:14px; height:14px; border-radius:9999px; flex-shrink:0; }
 </style>
 </head>
 <body class="bg-cream font-sans text-gray-800 overflow-x-hidden leading-relaxed">
 
-<!-- NAV -->
+<!-- NAV (fixed: clean structure, no nested nav, no orphan </a>) -->
 <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-4 flex justify-between items-center backdrop-blur-xl bg-cream/85 border-b border-navy/5 transition-transform duration-300">
-    <a href="/index.html" class="text-2xl font-black tracking-tighter uppercase hover:text-primary transition-colors">SStudio.</a>
-  </a>
-  <div class="hidden md:flex gap-7">
-    <nav class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
-    <a href="/index.html" class="hover:text-primary transition-colors">Work</a>
-    <a href="/about.html" class="hover:text-primary transition-colors">About</a>
-
+  <a href="/index.html" class="text-2xl font-black tracking-tighter uppercase text-navy hover:text-ora transition-colors">SStudio.</a>
+  <div class="hidden md:flex items-center gap-12 font-medium text-sm tracking-widest uppercase">
+    <a href="/index.html" class="text-navy hover:text-ora transition-colors">Work</a>
+    <a href="/about.html" class="text-navy hover:text-ora transition-colors">About</a>
   </div>
 </nav>
 
@@ -104,38 +92,30 @@ tailwind.config = {
         Psychometrics<br><em class="italic text-ora">Beyond</em> the Workplace
       </h1>
       <p class="anim-fadeup-3 text-gray-500 leading-relaxed mb-9" style="font-size:clamp(15px,1.1vw,18px);max-width:460px;">
-        How can Insights Discovery’s colour personality framework help retirees rediscover purpose, build connections, and navigate the transition into their Third Age?
+        How can Insights Discovery's colour personality framework help retirees rediscover purpose, build connections, and navigate the transition into their Third Age?
       </p>
       <div class="anim-fadeup-4 flex gap-3 flex-wrap">
-        <a href="#context"
-           class="inline-flex items-center gap-2 rounded-full text-sm font-semibold border-2 border-navy/10 text-navy hover:border-ora hover:text-ora transition-all duration-300 hover:-translate-y-0.5"
-           style="padding:12px 28px;text-decoration:none;">
+        <a href="#context" class="inline-flex items-center gap-2 rounded-full text-sm font-semibold border-2 border-navy/10 text-navy hover:border-ora hover:text-ora transition-all duration-300 hover:-translate-y-0.5" style="padding:12px 28px;text-decoration:none;">
           click to explore →
         </a>
       </div>
-    </div><!-- /left -->
+    </div>
 
-    <!-- RIGHT: iframe sized to fit the 844px phone shell -->
+    <!-- RIGHT: iframe phone preview -->
     <div class="anim-slide-in" style="height:920px;">
       <div style="height:100%;overflow:hidden;background:transparent;">
-        <iframe
-          src="reference/Colorful_Time_Phone.html"
-          title="Colorful Time Phone Prototype"
-          loading="lazy"
-          scrolling="no"
-          style="display:block;width:100%;height:100%;border:none;overflow:hidden;background:transparent;"
-        ></iframe>
+        <iframe src="reference/Colorful_Time_Phone.html" title="Colorful Time Phone Prototype" loading="lazy" scrolling="no" style="display:block;width:100%;height:100%;border:none;overflow:hidden;background:transparent;"></iframe>
       </div>
       <p style="text-align:center;margin-top:10px;font-size:11px;color:#9ca3af;letter-spacing:.04em;">
         <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#F27C20;margin-right:5px;vertical-align:middle;animation:pulse-dot 2s ease-in-out infinite;"></span>
-        Live prototype 
+        Live prototype
       </p>
-    </div><!-- /right -->
+    </div>
 
   </div>
 </section>
 
-<!-- CONTEXT -->
+<!-- CONTEXT (emoji icons replaced with colour-dot + label) -->
 <section id="context" class="max-w-6xl mx-auto px-6 md:px-10 py-20">
   <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">The Opportunity</p>
   <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">A £multimillion psychometric tool.<br>But only for the office.</h2>
@@ -143,23 +123,23 @@ tailwind.config = {
 
   <div class="grid md:grid-cols-2 gap-5 mt-16">
     <div class="sr bg-white/60 backdrop-blur-sm border border-navy/5 rounded-2xl p-8 md:p-10 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="w-14 h-14 rounded-2xl bg-ora/10 flex items-center justify-center text-2xl mb-5">🎯</div>
-      <h3 class="font-serif text-xl text-navy mb-3">The Brief</h3>
-      <p class="text-sm text-gray-500 leading-relaxed">Partnering with Insights Discovery to explore how their colour personality methodology could expand beyond corporate training — into the growing market of active ageing and retirement transitions.</p>
+      <div class="flex items-center gap-2 mb-5"><span class="icon-dot bg-ora"></span><p class="text-xs font-bold tracking-[.15em] uppercase text-ora">Brief</p></div>
+      <h3 class="font-serif text-xl text-navy mb-3">Expanding beyond corporate training</h3>
+      <p class="text-sm text-gray-500 leading-relaxed">Partnering with Insights Discovery to explore how their colour personality methodology could expand into the growing market of active ageing and retirement transitions.</p>
     </div>
     <div class="sr bg-white/60 backdrop-blur-sm border border-navy/5 rounded-2xl p-8 md:p-10 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="w-14 h-14 rounded-2xl bg-earth/10 flex items-center justify-center text-2xl mb-5">🌍</div>
-      <h3 class="font-serif text-xl text-navy mb-3">The Context</h3>
-      <p class="text-sm text-gray-500 leading-relaxed">Scotland's 65+ population is growing 3-4% annually. Retirees face identity loss, social isolation, and declining health perception 5-10 years before pension age. Communities need new tools for connection.</p>
+      <div class="flex items-center gap-2 mb-5"><span class="icon-dot bg-earth"></span><p class="text-xs font-bold tracking-[.15em] uppercase text-earth">Context</p></div>
+      <h3 class="font-serif text-xl text-navy mb-3">An ageing population without tools for transition</h3>
+      <p class="text-sm text-gray-500 leading-relaxed">Scotland's 65+ population is growing 3–4% annually. Retirees face identity loss, social isolation, and declining health perception 5–10 years before pension age. Communities need new tools for connection.</p>
     </div>
     <div class="sr bg-white/60 backdrop-blur-sm border border-navy/5 rounded-2xl p-8 md:p-10 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="w-14 h-14 rounded-2xl bg-cool/10 flex items-center justify-center text-2xl mb-5">❓</div>
-      <h3 class="font-serif text-xl text-navy mb-3">The Question</h3>
-      <p class="text-sm text-gray-500 leading-relaxed">How to use psychometric tools to help elder people during the transition into retirement to explore new lifestyles and purpose?</p>
+      <div class="flex items-center gap-2 mb-5"><span class="icon-dot bg-cool"></span><p class="text-xs font-bold tracking-[.15em] uppercase text-cool">Question</p></div>
+      <h3 class="font-serif text-xl text-navy mb-3">Can a personality framework do social-prescribing work?</h3>
+      <p class="text-sm text-gray-500 leading-relaxed">How might psychometric tools help older adults during retirement transition explore new lifestyles, identities, and a renewed sense of purpose?</p>
     </div>
     <div class="sr bg-white/60 backdrop-blur-sm border border-navy/5 rounded-2xl p-8 md:p-10 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="w-14 h-14 rounded-2xl bg-fire/10 flex items-center justify-center text-2xl mb-5">📐</div>
-      <h3 class="font-serif text-xl text-navy mb-3">The Approach</h3>
+      <div class="flex items-center gap-2 mb-5"><span class="icon-dot bg-fire"></span><p class="text-xs font-bold tracking-[.15em] uppercase text-fire">Approach</p></div>
+      <h3 class="font-serif text-xl text-navy mb-3">Eight weeks embedded in the community</h3>
       <p class="text-sm text-gray-500 leading-relaxed">Ethnographic research across 3 Glasgow community organisations, in-depth interviews, expert consultations, and iterative workshop design with 23+ participants.</p>
     </div>
   </div>
@@ -172,216 +152,119 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- STAKEHOLDER -->
+<!-- STAKEHOLDER (compressed: 4 cards, no sub-bullets, Insights now uses ora to match palette) -->
 <section class="max-w-6xl mx-auto px-6 md:px-10 py-20">
   <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Stakeholder Value</p>
   <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">Who benefits and how</h2>
   <p class="text-base text-gray-500 max-w-2xl leading-relaxed mb-16">Colorful Time is designed as a B2B2C service — delivered through community organisations to the people who need it most. Every layer of the ecosystem gains something concrete.</p>
 
-  <div class="grid md:grid-cols-3 gap-5">
+  <div class="grid md:grid-cols-2 gap-5">
 
-    <!-- Elder People -->
-    <div class="sr md:col-span-2 bg-gradient-to-br from-earth/10 to-earth/5 rounded-3xl p-8 border border-earth/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-earth/10 transition-all duration-300">
+    <div class="sr bg-gradient-to-br from-earth/10 to-earth/5 rounded-3xl p-8 border border-earth/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-earth/10 transition-all duration-300">
       <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 rounded-2xl bg-earth flex items-center justify-center text-white text-xl">🧑‍🤝‍🧑</div>
-        <div>
-          <p class="font-bold text-navy text-base">Elder People (55–75)</p>
-          <p class="text-xs text-gray-400">Primary beneficiary</p>
-        </div>
+        <span class="w-3 h-3 rounded-full bg-earth"></span>
+        <p class="font-bold text-navy text-base">Elder People (55–75)</p>
+        <span class="text-xs text-gray-400 ml-auto">Primary beneficiary</span>
       </div>
-      <p class="text-sm text-gray-600 leading-relaxed mb-5">Retirement often strips away the professional identity that structured daily life for decades. Without a role, without colleagues, the question "who am I now?" can feel paralysing. Colorful Time offers a new lens — not a job title, but a colour that describes how you move through the world.</p>
-      <div class="grid sm:grid-cols-2 gap-3">
-        <div class="bg-white/70 rounded-xl p-4">
-          <p class="text-xs font-bold text-navy mb-1">🏷️ A new identity anchor</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Colour personality gives retirees a positive self-label that travels with them into new social settings — replacing the lost work identity with something personal and memorable.</p>
-        </div>
-        <div class="bg-white/70 rounded-xl p-4">
-          <p class="text-xs font-bold text-navy mb-1">🤝 Lower barrier to first contact</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Walking into a room of strangers is hardest in the first 60 seconds. A colour badge gives someone else an opener before a single word about history or hobbies is needed.</p>
-        </div>
-        <div class="bg-white/70 rounded-xl p-4">
-          <p class="text-xs font-bold text-navy mb-1">🎨 Vivid, memorable, accessible</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Research and fieldwork both showed older adults respond immediately to saturated colour. Four colours are easy to hold in memory — far more so than a 16-type acronym.</p>
-        </div>
-        <div class="bg-white/70 rounded-xl p-4">
-          <p class="text-xs font-bold text-navy mb-1">🌱 Permission to explore</p>
-          <p class="text-xs text-gray-500 leading-relaxed">The activity guide tied to each colour gives a concrete, low-pressure invitation to try something new — fishing, choir, gardening — framed as an expression of who you already are.</p>
-        </div>
-      </div>
+      <p class="text-sm text-gray-600 leading-relaxed">Retirement strips away the professional identity that structured daily life. Colorful Time offers a new lens — not a job title, but a colour that describes how you move through the world. A positive self-label, an opener with strangers, and a low-pressure invitation to try something new.</p>
     </div>
 
-    <!-- NHS -->
-    <div class="sr bg-gradient-to-br from-cool/10 to-cool/5 rounded-3xl p-8 border border-cool/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-cool/10 transition-all duration-300">
-      <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 rounded-2xl bg-cool flex items-center justify-center text-white text-xl">🏥</div>
-        <div>
-          <p class="font-bold text-navy text-base">NHS & Public Health</p>
-          <p class="text-xs text-gray-400">Systemic value</p>
-        </div>
-      </div>
-      <p class="text-sm text-gray-600 leading-relaxed mb-5">Social isolation in older adults is now classified as a public health risk equivalent to smoking 15 cigarettes a day. Proactive social prescribing — connecting people to community activity before a crisis — is far cheaper than treating depression or loneliness downstream.</p>
-      <div class="space-y-3">
-        <div class="bg-white/70 rounded-xl p-4">
-          <p class="text-xs font-bold text-navy mb-1">📉 Reduced downstream cost</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Every retiree who builds a social network through Colorful Time is less likely to require mental health intervention, GP visits, or emergency care related to isolation.</p>
-        </div>
-        <div class="bg-white/70 rounded-xl p-4">
-          <p class="text-xs font-bold text-navy mb-1">📋 Social prescribing infrastructure</p>
-          <p class="text-xs text-gray-500 leading-relaxed">The workshop and app provide a structured, repeatable tool that link workers and GPs can refer patients to — turning an abstract recommendation into a concrete next step.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Insights Discovery -->
-    <div class="sr bg-gradient-to-br from-[#8B5CF6]/10 to-[#8B5CF6]/5 rounded-3xl p-8 border border-[#8B5CF6]/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-      <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 rounded-2xl bg-[#8B5CF6] flex items-center justify-center text-white text-xl">🎯</div>
-        <div>
-          <p class="font-bold text-navy text-base">Insights Discovery</p>
-          <p class="text-xs text-gray-400">Commercial partner</p>
-        </div>
-      </div>
-      <p class="text-sm text-gray-600 leading-relaxed mb-4">A £multimillion psychometric tool used by Stripe, NHS, and thousands of organisations — but its reach currently stops at the workplace door. The retirement demographic represents an entirely untapped market at the exact moment people have the most time and motivation to reflect on who they are.</p>
-      <div class="bg-white/70 rounded-xl p-4">
-        <p class="text-xs font-bold text-navy mb-1">📈 New market, new mission</p>
-        <p class="text-xs text-gray-500 leading-relaxed">Colorful Time gives Insights Discovery a credible B2B2C pathway into the active ageing sector — community centres, U3A chapters, and social prescribing networks — without cannibalising their corporate business.</p>
-      </div>
-    </div>
-
-    <!-- Community Orgs -->
     <div class="sr bg-gradient-to-br from-ora/10 to-ora/5 rounded-3xl p-8 border border-ora/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-ora/10 transition-all duration-300">
       <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 rounded-2xl bg-ora flex items-center justify-center text-white text-xl">🏛️</div>
-        <div>
-          <p class="font-bold text-navy text-base">Community Organisations</p>
-          <p class="text-xs text-gray-400">Delivery partners</p>
-        </div>
+        <span class="w-3 h-3 rounded-full bg-ora"></span>
+        <p class="font-bold text-navy text-base">Insights Discovery</p>
+        <span class="text-xs text-gray-400 ml-auto">Commercial partner</span>
       </div>
-      <p class="text-sm text-gray-600 leading-relaxed mb-4">Centres like Wing Hong and Garnethill already run activities — but facilitators often struggle to help new members connect with each other quickly. Colorful Time gives them a structured ice-breaker that works from session one.</p>
-      <div class="bg-white/70 rounded-xl p-4">
-        <p class="text-xs font-bold text-navy mb-1">🗂️ Ready-to-run programme</p>
-        <p class="text-xs text-gray-500 leading-relaxed">The toolkit includes a facilitator guide, cards, and materials. No psychology training required — the colour framework does the heavy lifting.</p>
-      </div>
+      <p class="text-sm text-gray-600 leading-relaxed">A £multimillion tool used by Stripe and NHS — but reaching only the corporate market. Colorful Time opens a credible B2B2C pathway into active ageing: community centres, U3A chapters, social prescribing networks. New market, no cannibalisation of existing business.</p>
     </div>
 
-    <!-- Age UK / Govt -->
+    <div class="sr bg-gradient-to-br from-cool/10 to-cool/5 rounded-3xl p-8 border border-cool/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-cool/10 transition-all duration-300">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-3 h-3 rounded-full bg-cool"></span>
+        <p class="font-bold text-navy text-base">NHS &amp; Public Policy</p>
+        <span class="text-xs text-gray-400 ml-auto">Systemic value</span>
+      </div>
+      <p class="text-sm text-gray-600 leading-relaxed">Older-adult isolation is a public health risk equivalent to smoking 15 cigarettes a day. Colorful Time gives social prescribing a structured intervention — a tool link workers and GPs can refer patients to, generating engagement data that funders and policy teams can report against.</p>
+    </div>
+
     <div class="sr bg-gradient-to-br from-fire/10 to-fire/5 rounded-3xl p-8 border border-fire/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-fire/10 transition-all duration-300">
       <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 rounded-2xl bg-fire flex items-center justify-center text-white text-xl">🏛️</div>
-        <div>
-          <p class="font-bold text-navy text-base">Age UK & Government</p>
-          <p class="text-xs text-gray-400">Policy alignment</p>
-        </div>
+        <span class="w-3 h-3 rounded-full bg-fire"></span>
+        <p class="font-bold text-navy text-base">Community Organisations</p>
+        <span class="text-xs text-gray-400 ml-auto">Delivery partners</span>
       </div>
-      <p class="text-sm text-gray-600 leading-relaxed mb-4">Scotland's 65+ population grows 3–4% annually. Government and third-sector organisations like Age UK are under pressure to demonstrate measurable impact on active ageing and isolation reduction — with constrained budgets.</p>
-      <div class="bg-white/70 rounded-xl p-4">
-        <p class="text-xs font-bold text-navy mb-1">📊 Evidence-based, scalable</p>
-        <p class="text-xs text-gray-500 leading-relaxed">The workshop generates qualitative and quantitative data on social engagement — giving funders and policy teams something to report against. The toolkit is low-cost and replicable across any community context.</p>
-      </div>
+      <p class="text-sm text-gray-600 leading-relaxed">Centres like Wing Hong and Garnethill already run activities — but facilitators struggle to help new members connect quickly. The toolkit (cards, facilitator guide, materials) is ready-to-run; the colour framework does the heavy lifting, no psychology training required.</p>
     </div>
 
   </div>
 </section>
 
 
-<!-- THIRD AGE -->
+<!-- RESEARCH -->
 <section class="max-w-6xl mx-auto px-6 md:px-10 py-20">
-  <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Theoretical Framework</p>
-  <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">The Third Age — an untapped chapter</h2>
-  <p class="text-base text-gray-500 max-w-2xl leading-relaxed">Laslett (1991) mapped life into four ages. The Third Age — after retirement, before dependence — is an era ripe for self-discovery. Yet psychometric tools completely ignore this demographic.</p>
-  <div class="flex flex-col md:flex-row gap-0 mt-16 relative">
-    <div class="hidden md:block absolute top-[38px] left-0 right-0 h-[3px] bg-gradient-to-r from-cool via-earth via-sun to-ora rounded-full"></div>
-    <div class="flex-1 text-center relative pt-16"><div class="hidden md:block absolute top-7 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-cool border-[3px] border-white shadow-md"></div><div class="font-serif text-4xl text-navy mb-1">1st</div><div class="text-sm text-gray-400 font-medium">Dependence & Education</div></div>
-    <div class="flex-1 text-center relative pt-16"><div class="hidden md:block absolute top-7 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-earth border-[3px] border-white shadow-md"></div><div class="font-serif text-4xl text-navy mb-1">2nd</div><div class="text-sm text-gray-400 font-medium">Independence & Work</div></div>
-    <div class="flex-1 text-center relative pt-16 bg-ora/5 rounded-2xl pb-5"><div class="hidden md:block absolute top-7 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-ora border-[3px] border-white shadow-md"></div><div class="font-serif text-4xl text-navy mb-1">3rd</div><div class="text-sm text-ora font-bold">Achievement & Fulfillment</div></div>
-    <div class="flex-1 text-center relative pt-16"><div class="hidden md:block absolute top-7 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-fire border-[3px] border-white shadow-md"></div><div class="font-serif text-4xl text-navy mb-1">4th</div><div class="text-sm text-gray-400 font-medium">Final Dependence</div></div>
-  </div>
-</section>
-
-<!-- RESEARCH PROCESS -->
-<section class="max-w-6xl mx-auto px-6 md:px-10 py-20">
-  <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Research Process</p>
+  <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Research</p>
   <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">Embedded in the community</h2>
-  <p class="text-base text-gray-500 max-w-2xl leading-relaxed mb-12">Eight weeks of immersive fieldwork across Glasgow's multicultural centres, retirement communities, and the University of the Third Age.</p>
+  <p class="text-base text-gray-500 max-w-2xl leading-relaxed mb-12">Eight weeks of fieldwork across Glasgow's multicultural centres, retirement communities, and the University of the Third Age — combining ethnography, interviews, expert consultation, and iterative workshop testing.</p>
 
-  <!-- 📸 RESEARCH PHOTO STRIP -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
-    <div class="img-slot rounded-2xl h-44 md:h-56">
-      <img src="asset/fieldwork.png" alt="Ethnography at community centre"> 
-    </div>
-    <div class="img-slot rounded-2xl h-44 md:h-56">
-      <img src="asset/4.png" alt="In-depth interview with retiree">
-    </div>
-    <div class="img-slot rounded-2xl h-44 md:h-56">
-      <img src="asset/6.png" alt="In-depth interview with retiree">
-    </div>
-    <div class="img-slot rounded-2xl h-44 md:h-56">
-      <img src="asset/workshoptest.png" alt="In-depth interview with retiree">
-    </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div class="img-slot rounded-2xl h-44 md:h-56"><img src="asset/fieldwork.png" alt="Ethnography at community centre"></div>
+    <div class="img-slot rounded-2xl h-44 md:h-56"><img src="asset/4.png" alt="In-depth interview with retiree"></div>
+    <div class="img-slot rounded-2xl h-44 md:h-56"><img src="asset/6.png" alt="In-depth interview with retiree"></div>
+    <div class="img-slot rounded-2xl h-44 md:h-56"><img src="asset/workshoptest.png" alt="Workshop testing"></div>
   </div>
-
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-px rounded-2xl overflow-hidden">
-    <div class="ps bg-white p-6 md:p-8 text-center"><div class="pn font-serif text-3xl text-navy mb-2">01</div><h4 class="text-sm font-bold text-navy mb-2">Ethnography</h4><p class="text-xs text-gray-400 leading-relaxed">Embedded observation at Wing Hong & Garnethill Centre</p></div>
-    <div class="ps bg-white p-6 md:p-8 text-center"><div class="pn font-serif text-3xl text-navy mb-2">02</div><h4 class="text-sm font-bold text-navy mb-2">Interviews</h4><p class="text-xs text-gray-400 leading-relaxed">In-depth conversations with retirees at different stages</p></div>
-    <div class="ps bg-white p-6 md:p-8 text-center"><div class="pn font-serif text-3xl text-navy mb-2">03</div><h4 class="text-sm font-bold text-navy mb-2">Case Study</h4><p class="text-xs text-gray-400 leading-relaxed">U3A — "a youth club for retired people"</p></div>
-    <div class="ps bg-white p-6 md:p-8 text-center"><div class="pn font-serif text-3xl text-navy mb-2">04</div><h4 class="text-sm font-bold text-navy mb-2">Expert Input</h4><p class="text-xs text-gray-400 leading-relaxed">Consultation with Insights Discovery practitioners</p></div>
-    <div class="ps bg-white p-6 md:p-8 text-center col-span-2 md:col-span-1"><div class="pn font-serif text-3xl text-navy mb-2">05</div><h4 class="text-sm font-bold text-navy mb-2">Workshop</h4><p class="text-xs text-gray-400 leading-relaxed">Iterative testing with real participants</p></div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 text-xs text-gray-400 uppercase tracking-widest font-medium">
+    <p class="text-center md:text-left">Ethnography · Wing Hong &amp; Garnethill</p>
+    <p class="text-center md:text-left">Interviews · multi-stage retirees</p>
+    <p class="text-center md:text-left">Case study · U3A "youth club"</p>
+    <p class="text-center md:text-left">Workshop · iterative testing</p>
   </div>
 </section>
 
-<!-- KEY INSIGHTS -->
+<!-- KEY FINDINGS (decorative emoji removed; numbered Insight 01–04 labels added) -->
 <section id="insights" class="max-w-6xl mx-auto px-6 md:px-10 py-20">
   <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Key Findings</p>
   <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">What we discovered</h2>
   <p class="text-base text-gray-500 max-w-2xl leading-relaxed">Four insights that shaped Colorful Time — directly from 23+ participants across three community organisations.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-fire rounded-l-2xl"></div><div class="text-3xl mb-4">🪞</div><h4 class="font-serif text-lg text-navy mb-2.5">Colours as an ice-breaker</h4><p class="text-sm text-gray-500 leading-relaxed">Psychometric tools aren't the destination — they're the catalyst. Colour personalities gave retirees a safe, playful way to open up and connect.</p></div>
-    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-sun rounded-l-2xl"></div><div class="text-3xl mb-4">👥</div><h4 class="font-serif text-lg text-navy mb-2.5">Socialising is survival</h4><p class="text-sm text-gray-500 leading-relaxed">Social connection is the single most important factor in healthy ageing. Yet community centres offer limited activity types.</p></div>
-    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-earth rounded-l-2xl"></div><div class="text-3xl mb-4">🔮</div><h4 class="font-serif text-lg text-navy mb-2.5">Imagination needs stimulating</h4><p class="text-sm text-gray-500 leading-relaxed">Most retirees described a "regular and simple" lifestyle. Given the right prompts, they became animated about new possibilities.</p></div>
-    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-cool rounded-l-2xl"></div><div class="text-3xl mb-4">🏷️</div><h4 class="font-serif text-lg text-navy mb-2.5">Don't call them "old"</h4><p class="text-sm text-gray-500 leading-relaxed">Participants strongly resisted being labelled "elderly." U3A members called themselves "a youth club." Language matters.</p></div>
+    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-fire rounded-l-2xl"></div>
+      <p class="text-xs font-bold tracking-[.15em] uppercase text-fire mb-3">Insight 01</p>
+      <h4 class="font-serif text-lg text-navy mb-2.5">Colours as an ice-breaker</h4>
+      <p class="text-sm text-gray-500 leading-relaxed">Psychometric tools aren't the destination — they're the catalyst. Colour personalities gave retirees a safe, playful way to open up and connect.</p>
+    </div>
+    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-sun rounded-l-2xl"></div>
+      <p class="text-xs font-bold tracking-[.15em] uppercase text-[#b8941f] mb-3">Insight 02</p>
+      <h4 class="font-serif text-lg text-navy mb-2.5">Socialising is survival</h4>
+      <p class="text-sm text-gray-500 leading-relaxed">Social connection is the single most important factor in healthy ageing. Yet community centres offer limited activity types.</p>
+    </div>
+    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-earth rounded-l-2xl"></div>
+      <p class="text-xs font-bold tracking-[.15em] uppercase text-earth mb-3">Insight 03</p>
+      <h4 class="font-serif text-lg text-navy mb-2.5">Imagination needs stimulating</h4>
+      <p class="text-sm text-gray-500 leading-relaxed">Most retirees described a "regular and simple" lifestyle. Given the right prompts, they became animated about new possibilities.</p>
+    </div>
+    <div class="sr bg-white rounded-2xl p-8 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-cool rounded-l-2xl"></div>
+      <p class="text-xs font-bold tracking-[.15em] uppercase text-cool mb-3">Insight 04</p>
+      <h4 class="font-serif text-lg text-navy mb-2.5">Don't call them "old"</h4>
+      <p class="text-sm text-gray-500 leading-relaxed">Participants strongly resisted being labelled "elderly." U3A members called themselves "a youth club." Language matters.</p>
+    </div>
   </div>
 </section>
 
-<!-- FEEDBACK -->
+<!-- IN THEIR OWN WORDS -->
 <section id="feedback" class="max-w-6xl mx-auto px-6 md:px-10 py-20">
   <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">From the Field</p>
-  <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">What we heard in the community</h2>
-  <p class="text-base text-gray-500 max-w-2xl leading-relaxed mb-12">These observations from workshops and interviews directly shaped the design decisions that followed.</p>
+  <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-12">In their own words</h2>
 
-  <!-- Workshop Conclusions -->
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-    <div class="sr rounded-2xl bg-gradient-to-br from-sun/10 to-sun/5 p-6 border border-sun/10">
-      <div class="text-2xl mb-3">💡</div>
-      <p class="text-sm text-navy font-medium leading-relaxed">The workshop successfully sparked curiosity about psychometric tools and introduced the basics of personality colours.</p>
-    </div>
-    <div class="sr rounded-2xl bg-gradient-to-br from-ora/10 to-ora/5 p-6 border border-ora/10">
-      <div class="text-2xl mb-3">👗</div>
-      <p class="text-sm text-navy font-medium leading-relaxed">The discussion on personality was further stimulated by incorporating elements of fashion and attire.</p>
-    </div>
-    <div class="sr rounded-2xl bg-gradient-to-br from-earth/10 to-earth/5 p-6 border border-earth/10">
-      <div class="text-2xl mb-3">🔄</div>
-      <p class="text-sm text-navy font-medium leading-relaxed">Participants realised that personality colours are fluid and can change over time.</p>
-    </div>
-    <div class="sr rounded-2xl bg-gradient-to-br from-cool/10 to-cool/5 p-6 border border-cool/10">
-      <div class="text-2xl mb-3">💬</div>
-      <p class="text-sm text-navy font-medium leading-relaxed">The colours prompted attendees to recall more personal stories and moments of interaction with others.</p>
-    </div>
-  </div>
-
-  <h3 class="font-serif text-2xl text-navy mb-6">In their own words</h3>
   <div class="grid sm:grid-cols-2 gap-5">
-    <!-- 📸 Feedback card WITH photo -->
     <div class="sr bg-white rounded-2xl overflow-hidden border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="img-slot h-48">
-        <img src="asset/words.png" alt="Participant with postcard"  class="w-full h-full object-cover object-bottom">
-      </div>
+      <div class="img-slot h-48"><img src="asset/words.png" alt="Participant with postcard" class="w-full h-full object-cover object-bottom"></div>
       <div class="p-7 relative"><span class="font-serif text-5xl leading-none text-ora/20 absolute top-3 left-6">"</span><blockquote class="text-sm text-gray-700 italic leading-relaxed pt-5 mb-4">Attending a playful workshop instead of a traditional lecture feels quite enjoyable.</blockquote><div class="text-xs text-gray-400 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-sun inline-block"></span>Workshop Participant</div></div>
     </div>
-    <!-- 📸 Feedback card WITH photo -->
     <div class="sr bg-white rounded-2xl overflow-hidden border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="img-slot h-48">
-        <img src="asset/words2.png" alt="Retiree at activity" class="w-full h-full object-cover object-bottom">
-      </div>
+      <div class="img-slot h-48"><img src="asset/words2.png" alt="Retiree at activity" class="w-full h-full object-cover object-bottom"></div>
       <div class="p-7 relative"><span class="font-serif text-5xl leading-none text-ora/20 absolute top-3 left-6">"</span><blockquote class="text-sm text-gray-700 italic leading-relaxed pt-5 mb-4">I really enjoy cycling and would love to have someone join me.</blockquote><div class="text-xs text-gray-400 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-earth inline-block"></span>Retiree, 4 years post-retirement</div></div>
     </div>
     <div class="sr bg-white rounded-2xl p-7 border border-navy/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300 relative"><span class="font-serif text-5xl leading-none text-ora/20 absolute top-3 left-6">"</span><blockquote class="text-sm text-gray-700 italic leading-relaxed pt-5 mb-4">We think of ourselves as a youth club for retired people — more energetic people, they gather together and exchange skills.</blockquote><div class="text-xs text-gray-400 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cool inline-block"></span>U3A Coordinator</div></div>
@@ -397,11 +280,8 @@ tailwind.config = {
   <p class="text-base text-gray-500 max-w-2xl leading-relaxed">A workshop toolkit that uses colour personality theory to help retirees explore self-discovery, understand others, and imagine new possibilities for their Third Age.</p>
 
   <div class="grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center mt-16">
-    <!-- 📸 TOOLKIT card with image slot -->
     <div class="sr bg-white rounded-3xl border border-navy/5 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="img-slot aspect-[4/3] overflow-hidden">
-        <img src="asset/toolkit.png" alt="Colorful Time toolkit" class="w-full block object-contain">
-      </div>
+      <div class="img-slot aspect-[4/3] overflow-hidden"><img src="asset/toolkit.png" alt="Colorful Time toolkit" class="w-full block object-contain"></div>
       <div class="p-8 text-center">
         <h3 class="font-serif text-2xl text-navy mb-3">Toolkit</h3>
         <p class="text-sm text-gray-500 leading-relaxed">Colour personality cards, photo wall materials, postcard collage kit, and a facilitator's guide.</p>
@@ -410,11 +290,8 @@ tailwind.config = {
 
     <div class="hidden md:block font-serif text-4xl text-navy/20">+</div>
 
-    <!-- 📸 WORKSHOP card with image slot -->
     <div class="sr bg-white rounded-3xl border border-navy/5 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5 transition-all duration-300">
-      <div class="img-slot aspect-[4/3] overflow-hidden">
-        <img src="asset/photowall.png" alt="Colorful Time workshop" class="w-full block object-contain">
-      </div>
+      <div class="img-slot aspect-[4/3] overflow-hidden"><img src="asset/photowall.png" alt="Colorful Time workshop" class="w-full block object-contain"></div>
       <div class="p-8 text-center">
         <h3 class="font-serif text-2xl text-navy mb-3">Workshop</h3>
         <p class="text-sm text-gray-500 leading-relaxed">A 90-minute guided experience: colour discovery → photo sharing → collage making → group discussion.</p>
@@ -431,13 +308,12 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- APP CONCEPT -->
+<!-- APP CONCEPT (decorative emoji replaced with SVG icons / colour dots) -->
 <section class="max-w-6xl mx-auto px-6 md:px-10 py-20">
   <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Digital Extension</p>
   <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">Eventbrite, but for<br><em class="italic text-ora">who you are</em></h2>
   <p class="text-base text-gray-500 max-w-2xl leading-relaxed mb-12">The app extends the workshop into everyday community life. Instead of organising events by category or location alone, it uses colour personality as a social layer — helping retirees see not just <em>what</em> is happening nearby, but <em>who</em> is going and whether their energy will click.</p>
 
-  <!-- Why colour works for elders -->
   <div class="sr bg-gradient-to-br from-navy to-[#0f1a3d] rounded-3xl p-8 md:p-12 text-white mb-10 relative overflow-hidden">
     <div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-[radial-gradient(circle,rgba(242,124,32,.15)_0%,transparent_70%)] pointer-events-none"></div>
     <div class="absolute -bottom-16 -left-8 w-48 h-48 rounded-full bg-[radial-gradient(circle,rgba(46,127,194,.1)_0%,transparent_70%)] pointer-events-none"></div>
@@ -458,14 +334,18 @@ tailwind.config = {
         </div>
         <div class="bg-white/[.06] rounded-2xl p-5 border border-white/10">
           <div class="flex items-center gap-3 mb-2">
-            <span class="text-lg">🏷️</span>
+            <span class="w-5 h-5 rounded-full bg-ora flex items-center justify-center">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/></svg>
+            </span>
             <span class="text-sm font-bold">A social badge, not a test score</span>
           </div>
           <p class="text-white/50 text-xs leading-relaxed">When you walk into an activity centre and your name badge has a colour dot, it gives strangers an opening. "Oh, you're Green too — what does that mean for you?" The colour starts the conversation before words do.</p>
         </div>
         <div class="bg-white/[.06] rounded-2xl p-5 border border-white/10">
           <div class="flex items-center gap-3 mb-2">
-            <span class="text-lg">🤝</span>
+            <span class="w-5 h-5 rounded-full bg-cool flex items-center justify-center">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
             <span class="text-sm font-bold">The first step of trust</span>
           </div>
           <p class="text-white/50 text-xs leading-relaxed">Meeting someone new is hardest in the first 60 seconds. Shared colour energy signals shared values — giving two strangers a reason to believe they might enjoy each other's company before a single word about hobbies is exchanged.</p>
@@ -474,12 +354,14 @@ tailwind.config = {
     </div>
   </div>
 
-  <!-- Comparison: traditional vs Colorful Time -->
+  <!-- Comparison cards (calendar emoji → SVG; colour-energy emoji kept where colour IS the data) -->
   <div class="grid md:grid-cols-2 gap-6 mb-12">
     <div class="sr bg-white rounded-3xl p-8 border border-navy/5">
       <p class="text-xs font-bold text-gray-300 uppercase tracking-widest mb-5">Traditional Event Platform</p>
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center text-lg">📅</div>
+        <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
         <div class="flex-1 h-3 bg-gray-100 rounded-full"></div>
       </div>
       <div class="space-y-3 text-sm text-gray-400">
@@ -497,7 +379,9 @@ tailwind.config = {
       <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-fire via-sun via-earth to-cool rounded-t-3xl"></div>
       <p class="text-xs font-bold text-ora uppercase tracking-widest mb-5 mt-1">Colorful Time</p>
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-ora/10 flex items-center justify-center text-lg">🎨</div>
+        <div class="w-10 h-10 rounded-xl bg-ora/10 flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
         <div class="flex gap-1">
           <span class="w-6 h-6 rounded-full bg-fire shadow-sm"></span>
           <span class="w-6 h-6 rounded-full bg-sun shadow-sm -ml-1"></span>
@@ -506,10 +390,10 @@ tailwind.config = {
         </div>
       </div>
       <div class="space-y-3 text-sm">
-        <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ora"></span><span class="text-navy font-medium">Best for: 🔴 Red & 🟡 Yellow energies</span></div>
+        <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ora"></span><span class="text-navy font-medium">Best for: <span class="inline-block w-3 h-3 rounded-full bg-fire align-middle mx-0.5"></span> Red &amp; <span class="inline-block w-3 h-3 rounded-full bg-sun align-middle mx-0.5"></span> Yellow energies</span></div>
         <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ora"></span><span class="text-navy font-medium">Vibe: Active, social, hands-on</span></div>
         <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ora"></span><span class="text-navy font-medium">Your match: 92% personality fit</span></div>
-        <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ora"></span><span class="text-navy font-medium">Missing: 🔵 Blue — you'd be the complement!</span></div>
+        <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ora"></span><span class="text-navy font-medium">Missing: <span class="inline-block w-3 h-3 rounded-full bg-cool align-middle mx-0.5"></span> Blue — you'd be the complement</span></div>
       </div>
       <div class="mt-5 pt-5 border-t border-ora/10">
         <p class="text-xs text-ora/60 italic">You know the people. You know you'll fit. That's why you'll go.</p>
@@ -517,29 +401,28 @@ tailwind.config = {
     </div>
   </div>
 
-  <!-- Three design principles -->
+  <!-- Tag / Filter / Connect — emoji replaced with SVG line icons -->
   <div class="grid sm:grid-cols-3 gap-4">
     <div class="sr bg-navy rounded-2xl p-6 text-center">
-      <div class="text-2xl mb-3">🏷️</div>
+      <svg class="mx-auto mb-3" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
       <h4 class="font-serif text-base text-white mb-2">Tag</h4>
       <p class="text-xs text-white/40 leading-relaxed">Your colour becomes a visible identity — a badge that says who you are before you've said a word</p>
     </div>
     <div class="sr bg-navy rounded-2xl p-6 text-center">
-      <div class="text-2xl mb-3">🔍</div>
+      <svg class="mx-auto mb-3" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <h4 class="font-serif text-base text-white mb-2">Filter</h4>
       <p class="text-xs text-white/40 leading-relaxed">See events by personality fit — not just category. Know who's going and whether the energy matches yours</p>
     </div>
     <div class="sr bg-navy rounded-2xl p-6 text-center">
-      <div class="text-2xl mb-3">🤝</div>
+      <svg class="mx-auto mb-3" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <h4 class="font-serif text-base text-white mb-2">Connect</h4>
       <p class="text-xs text-white/40 leading-relaxed">Colour lowers the barrier to first contact — giving strangers a shared vocabulary before hobbies or history</p>
     </div>
   </div>
 
-  <!-- App prototype CTA -->
   <div class="mt-12 text-center">
     <a href="/reference/Colorful_Time_Phone.html" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-ora text-white rounded-2xl font-bold text-base shadow-lg shadow-ora/20 hover:-translate-y-0.5 transition-all active:scale-[.98]">
-      <span class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-lg">📱</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
       Try the Interactive App Prototype →
     </a>
     <p class="text-xs text-gray-400 mt-3">Click through the full prototype · Includes a playable colour personality test</p>
@@ -565,57 +448,71 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- POSITIONING -->
+<!-- POSITIONING (emoji icon blocks replaced with SVG icons) -->
 <section class="max-w-6xl mx-auto px-6 md:px-10 py-20">
   <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Positioning</p>
   <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-6">Not therapy. But Connection.</h2>
   <p class="text-base text-gray-500 max-w-2xl leading-relaxed mb-12">While existing digital therapy tools address individual mental health through private 1-on-1 conversations, Colorful Time tackles a fundamentally different challenge: rebuilding social connections and purpose during the retirement transition — through shared experiences, not isolated reflection.</p>
 
   <div class="grid md:grid-cols-2 gap-5">
-    <!-- Ash / AI Therapy -->
     <div class="sr bg-white rounded-3xl p-8 border border-navy/5 relative overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gray-200 to-gray-300 rounded-t-3xl"></div>
       <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 mt-2">Digital Therapy Tools (e.g. Ash)</p>
       <div class="space-y-4">
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-sm shrink-0 mt-0.5">🧠</span>
+          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </span>
           <div><p class="text-sm font-bold text-navy">1-on-1 AI conversation</p><p class="text-xs text-gray-400 mt-0.5">Private, individual, inward-focused</p></div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-sm shrink-0 mt-0.5">💊</span>
+          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4M9 11V7a3 3 0 1 1 6 0v4M9 11h6M15 11h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4"/></svg>
+          </span>
           <div><p class="text-sm font-bold text-navy">CBT-based treatment</p><p class="text-xs text-gray-400 mt-0.5">Anxiety, stress, emotional issues</p></div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-sm shrink-0 mt-0.5">👤</span>
+          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
           <div><p class="text-sm font-bold text-navy">All adults 18+</p><p class="text-xs text-gray-400 mt-0.5">General population with mental health needs</p></div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-sm shrink-0 mt-0.5">📱</span>
+          <span class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </span>
           <div><p class="text-sm font-bold text-navy">B2C SaaS subscription</p><p class="text-xs text-gray-400 mt-0.5">AI is the core product</p></div>
         </div>
       </div>
       <p class="text-xs text-gray-300 mt-6 italic">"I don't feel well" → Help me cope</p>
     </div>
 
-    <!-- Colorful Time -->
     <div class="sr bg-white rounded-3xl p-8 border-2 border-ora/20 relative overflow-hidden shadow-lg shadow-ora/5">
       <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-fire via-sun via-earth to-cool rounded-t-3xl"></div>
       <p class="text-xs font-bold text-ora uppercase tracking-widest mb-4 mt-2">Colorful Time</p>
       <div class="space-y-4">
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center text-sm shrink-0 mt-0.5">👥</span>
+          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
           <div><p class="text-sm font-bold text-navy">Community-based workshop</p><p class="text-xs text-gray-400 mt-0.5">Social, collective, outward-focused</p></div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center text-sm shrink-0 mt-0.5">🎨</span>
+          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center shrink-0 mt-0.5">
+            <span class="grid grid-cols-2 gap-0.5"><span class="w-1.5 h-1.5 rounded-full bg-fire"></span><span class="w-1.5 h-1.5 rounded-full bg-sun"></span><span class="w-1.5 h-1.5 rounded-full bg-earth"></span><span class="w-1.5 h-1.5 rounded-full bg-cool"></span></span>
+          </span>
           <div><p class="text-sm font-bold text-navy">Jungian colour personality</p><p class="text-xs text-gray-400 mt-0.5">Self-discovery, connection, purpose</p></div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center text-sm shrink-0 mt-0.5">🌿</span>
-          <div><p class="text-sm font-bold text-navy">Third Age retirees (55-75)</p><p class="text-xs text-gray-400 mt-0.5">Retirement transition, cross-cultural</p></div>
+          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10c0-4-3-7-7-7-2 0-3 1-3 3 0 1 1 2 2 2"/><circle cx="12" cy="12" r="2"/></svg>
+          </span>
+          <div><p class="text-sm font-bold text-navy">Third Age retirees (55–75)</p><p class="text-xs text-gray-400 mt-0.5">Retirement transition, cross-cultural</p></div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center text-sm shrink-0 mt-0.5">📦</span>
+          <span class="w-7 h-7 rounded-lg bg-ora/10 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F27C20" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </span>
           <div><p class="text-sm font-bold text-navy">B2B2C toolkit + workshop</p><p class="text-xs text-gray-400 mt-0.5">Human facilitation is the core product</p></div>
         </div>
       </div>
@@ -624,7 +521,42 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- NEXT STEPS -->
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  REFLECTION SECTION — PLACEHOLDER COPY                               ║
+  ║                                                                      ║
+  ║  ⚠  REPLACE BOTH PARAGRAPHS BELOW WITH REAL SPECIFIC MOMENTS         ║
+  ║      FROM YOUR FIELDWORK.                                            ║
+  ║                                                                      ║
+  ║  Generic reflection ≠ senior-level reflection. Aim for:              ║
+  ║  - A specific participant or session                                 ║
+  ║  - What actually happened in the room                                ║
+  ║  - What you'd actually do differently next time                      ║
+  ║                                                                      ║
+  ║  Better detail to replace what's there:                              ║
+  ║  - "At Wing Hong, an interview ran 90 min instead of 30 because…"    ║
+  ║  - "I scrapped the second card design after the U3A pilot because…"  ║
+  ║  - "I'd rerun the colour test in Cantonese — language affected…"     ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+<section class="max-w-5xl mx-auto px-6 md:px-10 py-20">
+  <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">Reflection</p>
+  <h2 class="font-serif text-3xl md:text-5xl text-navy leading-tight mb-12">What I learned, what I'd change</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="sr bg-white rounded-3xl p-8 border-l-4 border-earth">
+      <p class="text-xs font-bold tracking-[.15em] uppercase text-earth mb-4">What worked</p>
+      <p class="text-base text-gray-700 leading-relaxed">[PLACEHOLDER — replace with a specific moment.] The colour framework removed barriers we hadn't predicted. Within minutes of receiving their colour, retirees were comparing energies across the table — including across language at Wing Hong, where shared colour replaced shared vocabulary. The visual nature of the framework did more accessibility work than we'd designed for.</p>
+    </div>
+    <div class="sr bg-white rounded-3xl p-8 border-l-4 border-ora">
+      <p class="text-xs font-bold tracking-[.15em] uppercase text-ora mb-4">What I'd change</p>
+      <p class="text-base text-gray-700 leading-relaxed">[PLACEHOLDER — replace with a specific gap.] The workshop validates the toolkit, but not the digital extension. The app's social-tag mechanic was designed from observation, not tested with the same user base. Before the 12-week pilot, I'd run a low-fi probe — paper event listings with colour stickers — to see whether retirees actually use the colour signal when deciding to attend, or default back to logistics alone.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEXT STEPS (typo fixed: Companny → Company) -->
 <section class="max-w-4xl mx-auto px-6 md:px-10 py-20 text-center">
   <div class="inline-flex items-center gap-2 bg-ora/5 rounded-full uppercase mb-6" style="padding:6px 18px;font-size:11px;font-weight:600;letter-spacing:.12em;color:#F27C20;">
     <span class="w-2 h-2 rounded-full bg-ora"></span>
@@ -635,7 +567,7 @@ tailwind.config = {
   <div class="flex gap-4 justify-center flex-wrap">
     <a href="https://www.insights.com/products/insights-discovery/" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 bg-navy text-white rounded-full text-sm font-semibold border-2 border-navy hover:bg-transparent hover:text-navy transition-all duration-300" style="text-decoration:none;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
-      Collaborate Companny ↗
+      Collaborate Company ↗
     </a>
     <a href="https://winghongcentre.org/" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold border-2 border-navy/10 text-navy hover:border-ora hover:text-ora transition-all duration-300" style="text-decoration:none;">
       Collaborate community ↗
@@ -659,11 +591,8 @@ tailwind.config = {
 </footer>
 
 <script>
-
-// Scroll reveal
 const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='translateY(0)'}})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.sr').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition=`opacity .6s ease-out ${i*.06}s, transform .6s ease-out ${i*.06}s`;obs.observe(el)});
-// Nav hide
 let ls=0;window.addEventListener('scroll',()=>{const n=document.getElementById('mainNav'),s=window.scrollY;n.style.transform=(s>ls&&s>100)?'translateY(-100%)':'translateY(0)';ls=s});
 </script>
 </body>
